@@ -32,14 +32,27 @@
 	</div>
 
 
-<div class="nav-bar">
-		<ul class="nav">
-			<li><a href="shop.jsp">Browse Books</a></li>
-			<li><a href="addBook.jsp">Update Books</a></li>
-			<li><a href="addAdmin.jsp" > Update Admins</a>
-			<li><a href="logout.jsp">Logout</a></li>
-		</ul>
-	</div>
+
+		<nav class="navbar sticky-top navbar-light bg-dark">
+			<ul class="nav">
+				<li><a class="navbar-brand" href="shop.jsp">Browse Books</a></li>
+				<li><a class="navbar-brand" href="addBook.jsp"> Update Books</a></li>
+				<li><a class="navbar-brand" href="addAdmin.jsp"> Update Admins</a></li>
+				<li><a class="navbar-brand" href="logout.jsp"> Logout</a></li>
+				
+		<li class="nav-item dropdown">
+      	  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         	 Dropdown link
+       	 </a>
+       	 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+       	   <a class="dropdown-item" href="#">Action</a>
+       	   <a class="dropdown-item" href="#">Another action</a>
+       	   <a class="dropdown-item" href="#">Something else here</a>
+       	 </div>
+      </li>
+			</ul>
+		</nav>	
+		
 
 </body>
 </div>

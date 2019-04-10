@@ -22,6 +22,7 @@
 	<title>Login Page</title>
 </head>
 
+
 <%-- This is the jumbotron, which displays the header and background color surrounding header --%>
 <div style="background: url(https://www.heet.org.uk/wp-content/uploads/2016/06/gradient-background-26046-26731-hd-wallpapers.jpg.png) !important" class="jumbotron">
 	<div class="text-center">
@@ -55,18 +56,21 @@
 		<%-- Each "tr" function centers the text, and displays "..." with an input box --%>
  	 	<tr align="center" valign="top">
  	 		<td>Username:</td>
-  			<td><input type="text" name ="username" id="username"/></td><br><br>
+  			<td><input type="text" name ="username" id="username"/></td>
+  			<br><br>
 		</tr>
 		 
 		 <tr align="center" valign="top">
 		 	<td>Password:</td>
- 		 	<td><input type="password" name ="password" id="password"/></td><br><br>
+ 		 	<td><input type="password" name ="password" id="password"/></td>
+ 		 	<br><br>
  		 </tr>
 
 		<tr align="center" valign="top">
 			<td> 
-  			<input type="submit" name="submit" value="login" /> </td>
-  		</tr><br><br>
+  			<input type="submit" name="submit" value="login" /></td>
+  		</tr>
+  		<br><br>
   	
   		<tr align="center" valign="top">
 			<font size="2"><td><a href="register.jsp">Don't have an account? Register here!</a></td></font>  
@@ -75,6 +79,7 @@
  		</form> 
  	
  	</div>
+ 	
 </body>
 </div>
 </html>

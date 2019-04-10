@@ -4,11 +4,10 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-	<%-- This is used to display the name of the window user is on --%>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Add Admin Page</title>
-	</head>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Add Admin Page</title>
+</head>
 
 <link rel="stylesheet" href="login.css" type="text/css">
 

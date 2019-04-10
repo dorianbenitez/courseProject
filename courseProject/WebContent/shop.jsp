@@ -89,7 +89,7 @@
 
 <br><br>
 <nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
+  <ul class="pagination justify-content-center position-sticky">
     <li class="page-item disabled">
       <a class="page-link" href="#" tabindex="-1">Previous</a>
     </li>

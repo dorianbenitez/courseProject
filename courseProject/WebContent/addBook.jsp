@@ -20,27 +20,42 @@
 
 
 
+<%-- This is the jumbotron, which displays the header and background color surrounding header --%>
+<div style="background: url(https://www.heet.org.uk/wp-content/uploads/2016/06/gradient-background-26046-26731-hd-wallpapers.jpg.png) !important" class="jumbotron">
+	<div class="text-center">
+		<font size="5" color=#ebf1ed> <h1>Update Books</h1> </font>
+	</div>
+</div>
+
 <div id="container">
+
 
 
 
 <body>
 	
-	<%out.print("Hello!"); %>
 	
 	
-	<%
+	<%-- <%
 		DbManager db = new DbManager();
 		Connection conn = (Connection) db.getConnection();
 		if(conn == null)
 			out.print("connection failed");
 		else
 			out.print("Please enter the information for the book you would like to add or remove..");
-	%>
+	%> --%> 
 	
 	
 	<form name="addBookForm" action="addBook" method="post" onsubmit="return loginValidate()">
 	<br>
+	
+			<nav class="navbar sticky-top navbar-light bg-dark">
+			<ul class="nav">
+				<li><a class="navbar-brand" href="adminWelcome.jsp">Home</a></li>
+				<li><a class="navbar-brand" href="shop.jsp"> Browse Books</a></li>
+			</ul>
+		</nav>	  
+	
 	
 
 	<font size="3" color="green">${yesMessage}</font>
@@ -50,6 +65,9 @@
 	
 	
 	
+	<div id="content">
+			<br> <font size="3">Please enter the information for the book you would like to add or remove..</font> <br><br>
+	</div>
 	
 	<table border = "0">
 	
@@ -70,8 +88,13 @@
  	 </tr>
  	 
  	 <tr align="left" valign="top">
- 	 	<td>Image Link:</td>
-  			<td><input type="text" name="link" /></td>
+	   <td>Price (Ex. 6.99):</td>
+ 		 <td><input type="text" name ="ISBN"/></td>
+ 	 </tr>
+ 	 
+ 	 <tr align="left" valign="top">
+ 	 	<td>Book Cover (.png or .jpeg):</td>
+  			<td><input type="file" id="link" name="link" accept="image/png, image/jpeg"></td>
 	 </tr>
 
 	
@@ -84,6 +107,8 @@
 	
 
  	</table>
+	
+	
 	
 	</form>
 </div>

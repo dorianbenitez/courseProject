@@ -7,11 +7,11 @@ public class Book {
 	private String author;
 	private String link;
 	
-	public Book(String t, String a, String i, String l){
+	public Book(String t, String a, String i, float p, String l){
 		title = t;
 		author = a;
 		ISBN = i;
-		// price = p;
+		price = p;
 		link = l;
 	}
 	public void setTitle(String t)

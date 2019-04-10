@@ -28,10 +28,20 @@
 			<font size="5" color=#ebf1ed> <h1>Account Registration</h1> </font>
 		</div>
 	</div>
+	
+			<nav class="navbar sticky-top navbar-light bg-dark">
+			<ul class="nav">
+				<li><a class="navbar-brand" href="login.jsp">Home</a></li>
+			</ul>
+		</nav>	  
 
 <form name="regform" action="LoginController" method="post" onsubmit="return regValidate()">
 
 	<font size="3" color="red">${message}<br></font>
+	
+	<div id="content">
+			<br> <font size="3">Please enter information below..</font> <br>
+	</div>
 	
 	<table border = "0">
 	

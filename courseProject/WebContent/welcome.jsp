@@ -18,7 +18,6 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="login.css" type="text/css">
 
-
 <div id="container">
 
 <body>
@@ -30,39 +29,26 @@
 	</div>
 
 
-
-
-<div class="nav-bar">
-		<ul class="nav">
-			<li><a href="shop.jsp">Shop Books</a></li>
-			<%-- <li><a href="addBook.jsp">Update Books</a></li>  --%>
-			<li><a href="logout.jsp">Logout</a></li>
-		</ul>
-	</div>
-	
-	
-
-</body>
-</div>
-
-
-
-
-
-
-
-
-<div id="container">
-
-<body>
-	
-	
-	
-	
-	
-	
-	
-
+		<nav class="navbar sticky-top navbar-light bg-dark">
+			<ul class="nav">
+				<li><a class="navbar-brand" href="shop.jsp">Shop Books</a></li>
+				<li><a class="navbar-brand" href="logout.jsp"> Logout</a></li>
+			</ul>
+		</nav>	
+		<br>
+		
+		
+		<table>
+			<tr><th>Noteworthy Best Sellers</th></tr>
+				<td><img class="resize" src="http://tesseraguild.com/wp-content/uploads/2018/06/Hobbit.jpg"></td>
+				<td><img class="resize" src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></td>
+				<td><img class="resize" src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></td>
+				<td><img class="resize" src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></td>
+				<td><img class="resize" src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></td>
+		
+		
+		
+		</table>
 
 </body>
 </div>

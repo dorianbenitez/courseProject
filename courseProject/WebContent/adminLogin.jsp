@@ -31,6 +31,12 @@
 		</div>
 	</div>
 	
+			<nav class="navbar sticky-top navbar-light bg-dark">
+			<ul class="nav">
+				<li><a class="navbar-brand" href="login.jsp">Home</a></li>
+			</ul>
+		</nav>	  
+	
 	
 		<form name="loginform" action="AdminController" method="post" onsubmit="return loginValidate()" > 
 	
@@ -40,7 +46,7 @@
 	<table border = "0">
 	
  	 <tr align="left" valign="top">
- 	 	<td>Username:</td>
+ 	 <br>	<td>Username:</td>
   			<td><input type="text" name ="user" id="user"/></td>
 	 </tr>
 	 
