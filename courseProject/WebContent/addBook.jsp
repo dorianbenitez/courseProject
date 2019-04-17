@@ -92,10 +92,17 @@
  		 <td><input type="text" name ="ISBN"/></td>
  	 </tr>
  	 
+ 	 <%-- 
  	 <tr align="left" valign="top">
  	 	<td>Book Cover (.png or .jpeg):</td>
   			<td><input type="file" id="link" name="link" accept="image/png, image/jpeg"></td>
 	 </tr>
+	 --%>
+	 
+	  	 <tr align="left" valign="top">
+	   <td>Link:</td>
+ 		 <td><input type="text" name ="link"/></td>
+ 	 </tr>
 
 	
 	<tr align="left" valign="top">

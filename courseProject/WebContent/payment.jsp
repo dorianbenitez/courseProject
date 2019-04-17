@@ -46,14 +46,19 @@
 		
 		<table border = "0">
 	
- 	 		<tr align="left" valign="top">
- 	 			<th>Payment method: </th>
- 	 			<td><button><img class="resizeTiny" src="https://resources.mynewsdesk.com/image/upload/ojf8ed4taaxccncp6pcp.png"></button></td>
- 	 			<td><button><img class="resizeTiny" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/1280px-MasterCard_Logo.svg.png"></button></td>
- 	 			<td><button><img class="resizeTiny" src="https://kingdomanimalhospital.com/wp-content/uploads/2017/08/discover-card-logo.png"></button></td>
- 	 			<td><button><img class="resizeTiny" src="https://www.pointsnerd.ca/wp-content/uploads/2017/04/americanexpress-418x315.png"></button></td>
-			</tr>
+	
+ 	 	<tr align="left" valign="top">
+ 	 		<th>Payment method: </th>
+ 	 			<td><select>
+  					<option value="volvo">Visa</option>
+  					<option value="saab">Mastercard</option>
+  					<option value="mercedes">Discover</option>
+  					<option value="audi">American Express</option>
+				</select></td>
+		</tr>
 <br><br>
+
+
 	 
 	 		<tr align="left" valign="top">
 	   			<td>Name On Card: </td>

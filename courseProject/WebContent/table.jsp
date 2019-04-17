@@ -56,7 +56,7 @@ String x = "taa";
 %>
 
 <%-- <TABLE class="table-striped" style="background-color: #F4DC78" align="center" border="0" width="70%"> --%>
-<table border="2" align="center" width="70%">
+<table border="2" align="center" width="70%" id="booktable">
 
 <%-- 
 <tr class=sticky-top>
@@ -70,57 +70,39 @@ String x = "taa";
 --%>
 
 <%
-while (rs.next()) {
+while (rs.next() && n<20){
 	n++;
 
 %>
 
-<%-- 
-<tr>
-	<td align="center" valign="top"><%=n %></td>
+	<% 
+		if(n%6 ==0){
+	%>
 	
-	
-	<td align="center"><A HREF=singleBook.jsp>
-		<img class="resize" src=./photos/<%=rs.getString(5)%> />
-	</a></td>
+		<tr></tr>
 
-	<td align="center"><A HREF="singleBook.jsp">	
-		<font size="4" color="blue">Title:</font>
-			<font size="4" color="blue"><%=rs.getString(1)%></font>
-		<br><br>
+	<% } %>
+
+
+
+		<td id="bookCell" style="padding: 2px"><a href="singleBook.jsp"><img class="resize"  src=./photos/<%=rs.getString(5)%> /> 
 		
-		<font size="4" color="blue">Author:</font>
-			<font size="4" color="blue"><%=rs.getString(2)%></font>
-		<br><br>
-		
-		<font size="4" color="blue">ISBN:</font>
-			<font size="4" color="blue"><%=rs.getString(3)%></font>
-		<br><br>
-		
-		<font size="4" color="blue">Price: $</font>
-			<font size="4" color="blue"><%=rs.getString(4)%></font>
-		<br><br>
-		
-	</a></td>
-
-</tr>
-
---%>
-
-
-
-		<td><img class="resize" src=./photos/<%=rs.getString(5)%> />
-					<a href="singleBook.jsp"><p style="text-align:center;"><font size="4" color="blue"><%=rs.getString(1)%></p></font></a>
-					<p style="text-align:center;"><%=rs.getString(2)%></p>
-					<p style="text-align:center;">$<%=rs.getString(4)%></p>
+		<style>
+			p{
+				padding-top:0; 
+				text-align:center; 
+				margin-bottom:0;
+			}
+		</style>
+					<p><a href="singleBook.jsp"><font size="4" color="blue"><%=rs.getString(1)%></font></a></p>
+					<p><%=rs.getString(2)%></p>
+					<p>$<%=rs.getString(4)%></p>
 		</td>
 
 
-
-
-<% 
-
-} %>
+	<% 
+		} 
+	%>
 
 <%
 // close all the connections.
@@ -139,12 +121,25 @@ out.println("Unable to connect to database.");
 
 </TABLE>
 
-<TABLE>
-	<tr>
-		<td><FORM ACTION="welcome_to_database_query.jsp" method="get" >
-		<button type="submit"><-- back</button></td>
-	</tr>
-</TABLE>
+
 </font>
+
+<br><br>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center position-sticky">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="shop.jsp">1</a></li>
+    <li class="page-item"><a class="page-link" href="shop2.jsp">2</a></li>
+    <li class="page-item"><a class="page-link" href="shop3.jsp">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="shop2.jsp">Next</a>
+    </li>
+  </ul>
+</nav>
+		
+
 </body>
 </html>
