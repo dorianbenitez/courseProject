@@ -11,17 +11,17 @@ public class CheckoutDao {
 	static PreparedStatement ps;
 	DbManager db = new DbManager();
 	
-	public int add(String title, String price, String cover) {
+	public int add(String title, String price, String link) {
 		int status = 0;
 		try{
 			String k = price;
 			String j = title;
-			String r = cover;
+			String r = link;
 			conn = db.getConnection();
 			ps = conn.prepareStatement("insert into cart values(?,?,?)");
 			ps.setString(1, price);
 			ps.setString(2, title);
-			ps.setString(3, cover);
+			ps.setString(3, link);
 			status = ps.executeUpdate();
 			conn.close();
 		}catch(Exception e){

@@ -28,6 +28,14 @@
 	</div>
 </div>
 
+		<nav class="navbar sticky-top navbar-light bg-dark">
+			<ul class="nav">
+				<a class="navbar-brand" href="welcome.jsp">Home</a>
+				<a class="navbar-brand" href="checkout.jsp">Checkout</a>
+				<a class="navbar-brand" href ="logout.jsp">Logout</a>
+			</ul>
+		</nav><br>
+
 
 <%
 try {
@@ -57,7 +65,7 @@ int n=0;
 %>
 
 
-<table border="2" align="center" width="70%" id="booktable">
+<table border="2" align="center" width="80%" id="booktable">
 
 
 <%
@@ -78,13 +86,13 @@ while (rs.next() && n<20){
 
 		<%-- string(1,2,3,4,5) = title, author, isbn, price, cover --%>
 		
-		<td style="padding: 2px"><img class="resize" id="cover" src=./photos/<%=rs.getString(5)%> /> 
+		<td style="padding:2px"><img class="resize" id="cover" src=./photos/<%=rs.getString(5)%> /> 
 		
 		<style>
 			p{
 				padding-top:0; 
 				text-align:center; 
-				margin-bottom:0;
+				margin-bottom:0.5px;
 			}
 		</style>
 		<% 
@@ -100,8 +108,8 @@ while (rs.next() && n<20){
 					<form action="CheckoutController" method="post" >
 						<p><input type="hidden" name="title" value="<%=t%>"></p>
 						<p><input type="hidden" name="price" value="<%=p%>"></p>
-						<p><input type="hidden" name="price" value="<%=c%>"></p>
-						<input type="submit" name="Add to cart" value="Add to cart" /></td>
+						<p><input type="hidden" name="link" value="<%=c%>"></p><br>
+						<input class="btn-primary btn-sm" type="submit" name="Add to cart" value="Add to cart" /></td>
 					</form>
 		</td>
 

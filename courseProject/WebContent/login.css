@@ -244,6 +244,11 @@ img.resize {
   height:205px;
 }
 
+img.checkout-resize{
+	width:100px;
+	height: 150px;
+}
+
 img.resizeTiny {
   width:50px;
   height:35px;

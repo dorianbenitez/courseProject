@@ -25,12 +25,13 @@ public class CheckoutController extends HttpServlet {
 		CheckoutDao c = new CheckoutDao();
 		String price = request.getParameter("price");
 		String title = request.getParameter("title");
+		String link = request.getParameter("link");
 		String submitType = request.getParameter("Add to cart");
-		c.add(title, price);
+		c.add(title, price, link);
 		
 		
 		if(submitType.equals("Add to cart")) {
-			request.getRequestDispatcher("checkout.jsp").forward(request, response);
+			request.getRequestDispatcher("table.jsp").forward(request, response);
 		}
 		
 

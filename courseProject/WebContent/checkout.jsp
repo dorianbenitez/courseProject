@@ -16,7 +16,7 @@
 
 
 <head>
-	<title>display data from the table using jsp</title>
+	<title>Checkout</title>
 </head>
 
 
@@ -54,11 +54,31 @@ statement = connection.createStatement();
 String QueryString = "SELECT * FROM cart";
 rs = statement.executeQuery(QueryString);
 int n=0;
-String x = "taa";
 %>
 
 
-<table border="2" align="center" width="70%" id="booktable">
+
+
+
+<div class="d-flex justify-content-around">
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Cover</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Price</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  
+ 
+
+
+
+
 
 <%
 while (rs.next() && n<20){
@@ -74,13 +94,16 @@ while (rs.next() && n<20){
 
 	<% } %>
 
-
-		<%-- string(1,2,3,4,5) = title, author, isbn, price, cover --%>
-		<td>
-					<p><font size="4" color="blue"><%=rs.getString(2)%></font></p>
-					<p><%=rs.getString(1)%></p>
-		</td>
-
+<tbody>
+    <tr>
+      <th scope="row"><%= n %></th>
+      <td><img class="checkout-resize" id="link" src=./photos/<%=rs.getString(3)%> /></td>
+      <td><%=rs.getString(2)%></td>
+      <td>Author</td>
+      <td><p><%=rs.getString(1)%></p></td>
+      <td><font color="red">Remove</font></td>
+    </tr>
+    </tbody>
 
 	<% 
 		} 
@@ -101,27 +124,15 @@ out.println("Unable to connect to database.");
 }
 %>
 
-</TABLE>
+</table>
+</div>
+
+<br>
+
+<p style="text-align: center">Total Price: </p>
 
 
-</font>
-
-<br><br>
-
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center position-sticky">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="shop.jsp">1</a></li>
-    <li class="page-item"><a class="page-link" href="shop2.jsp">2</a></li>
-    <li class="page-item"><a class="page-link" href="shop3.jsp">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="shop2.jsp">Next</a>
-    </li>
-  </ul>
-</nav>
-		
+</font>	
 
 </body>
 </html>

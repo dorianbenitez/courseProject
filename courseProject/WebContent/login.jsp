@@ -39,7 +39,7 @@
 		<nav class="navbar sticky-top navbar-light bg-dark">
 			<ul class="nav">
 				<li><a class="navbar-brand" href="register.jsp">Account Registration</a></li>
-				<li><a class="navbar-brand" href="table.jsp"> Browse</a></li>
+				<li><a class="navbar-brand" href="browse.jsp"> Browse</a></li>
 				<li><a class="navbar-brand" href="adminLogin.jsp"> Admin Portal</a></li>
 			</ul>
 		</nav>	  
@@ -63,7 +63,7 @@
 		 
 		 <tr align="center" valign="top">
 		 	<td>Password:</td>
- 		 	<td><input type="password" name ="password" id="password"/></td>
+ 		 		<td><input type="password" name ="password" id="password"/></td>
  		 	<br><br>
  		 </tr>
 
