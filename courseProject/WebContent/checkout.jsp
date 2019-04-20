@@ -1,19 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//Dtd HTML 4.01 transitional//EN"
+"http://www.w3.org/tr/html4/loose.dtd">
+<%@ page import="java.sql.*" %>
+<%@ page import="java.io.*" %> 
+
+
 <html>
-<head>
-<meta charset="UTF-8">
-
-
-</head>
-
-<head>
-	<script type="text/javascript" src="script.js"></script>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Checkout Page</title>
-</head>
-
 
 <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 <link rel="stylesheet" href="css/bootstrap-grid.css" type="text/css">
@@ -23,29 +14,114 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="login.css" type="text/css">
 
-<div id="container">
 
-	<body>
-	<div style="background: url(https://www.heet.org.uk/wp-content/uploads/2016/06/gradient-background-26046-26731-hd-wallpapers.jpg.png) !important" class="jumbotron">
-		<div class="text-center">
-			<font size="5" color=#ebf1ed> <h1>Checkout Page</h1> </font>
-		</div>
+<head>
+	<title>display data from the table using jsp</title>
+</head>
+
+
+<body>
+
+<div style="background: url(https://www.heet.org.uk/wp-content/uploads/2016/06/gradient-background-26046-26731-hd-wallpapers.jpg.png) !important" class="jumbotron">
+	<div class="text-center">
+		<font size="5" color=#ebf1ed> <h1>Checkout</h1> </font>
 	</div>
-		
-				<nav class="navbar sticky-top navbar-light bg-dark">
-		<ul class="nav">
-			<li><a class="navbar-brand" href="welcome.jsp">Home</a></li>
-			<li><a class="navbar-brand" href="shop.jsp"> Continue Shopping</a></li>
-			<li><a class="navbar-brand" href="logout.jsp"> Logout</a></li>
-		</ul>
-		</nav>	
+</div>
+
+
+<%
+try {
+/* Create string of connection url within specified format with machine
+name, port number and database name. Here machine name id localhost and 
+database name is student. */
+String connectionURL = "jdbc:mysql://127.0.0.1:3306/coursedatabase";
+// declare a connection by using Connection interface
+Connection connection = null;
+/* declare object of Statement interface that is used for executing sql 
+statements. */
+Statement statement = null;
+// declare a resultset that uses as a table for output data from tha table.
+ResultSet rs = null;
+// Load JBBC driver "com.mysql.jdbc.Driver"
+Class.forName("com.mysql.jdbc.Driver").newInstance();
+/* Create a connection by using getConnection() method that takes parameters 
+of string type connection url, user name and password to connect to database.*/
+connection = DriverManager.getConnection(connectionURL, "root", "Chump4870");
+/* createStatement() is used for create statement object that is used for 
+sending sql statements to the specified database. */
+statement = connection.createStatement();
+// sql query to retrieve values from the secified table.
+String QueryString = "SELECT * FROM cart";
+rs = statement.executeQuery(QueryString);
+int n=0;
+String x = "taa";
+%>
+
+
+<table border="2" align="center" width="70%" id="booktable">
+
+<%
+while (rs.next() && n<20){
+	n++;
+
+%>
+
+	<% 
+		if(n%6 ==0){
+	%>
 	
-		<br>
-		<tr align="center" valign="top">
-			<td> 
-				<a href="payment.jsp"><button type="button" class="btn btn-primary btn-lg"> <font size="3" color="white">Final Checkout </font></button></a>
-  			</td>
-  		</tr><br><br>
+		<tr></tr>
+
+	<% } %>
+
+
+		<%-- string(1,2,3,4,5) = title, author, isbn, price, cover --%>
+		<td>
+					<p><font size="4" color="blue"><%=rs.getString(2)%></font></p>
+					<p><%=rs.getString(1)%></p>
+		</td>
+
+
+	<% 
+		} 
+	%>
+
+<%
+// close all the connections.
+rs.close();
+statement.close();
+connection.close();
+} 
+catch (Exception ex) {
+%>
+
+<font size="+3" color="red"></b>
+<%
+out.println("Unable to connect to database.");
+}
+%>
+
+</TABLE>
+
+
+</font>
+
+<br><br>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center position-sticky">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="shop.jsp">1</a></li>
+    <li class="page-item"><a class="page-link" href="shop2.jsp">2</a></li>
+    <li class="page-item"><a class="page-link" href="shop3.jsp">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="shop2.jsp">Next</a>
+    </li>
+  </ul>
+</nav>
+		
 
 </body>
 </html>

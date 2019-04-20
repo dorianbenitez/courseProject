@@ -31,7 +31,7 @@
 
 		<nav class="navbar sticky-top navbar-light bg-dark">
 			<ul class="nav">
-				<li><a class="navbar-brand" href="shop.jsp">Shop Books</a></li>
+				<li><a class="navbar-brand" href="table.jsp">Shop Books</a></li>
 				<li><a class="navbar-brand" href="logout.jsp"> Logout</a></li>
 			</ul>
 		</nav>	

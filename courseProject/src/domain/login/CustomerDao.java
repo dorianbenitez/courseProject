@@ -19,7 +19,4 @@ public interface CustomerDao {
 	public Customer validateCustomer(Login login);
 
 	
-	//public Customer getCustomer(String username, String pass); This method does not needed as we have the Login object
-
-	
 }

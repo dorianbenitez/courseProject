@@ -28,8 +28,6 @@ public class BookDaoImpl implements BookDao{
 		ps.setString(5, b.getLink());
 		
 		status = ps.executeUpdate();
-	
-				//b.setPrice(rs.getDouble(4));
 
 		 
 			

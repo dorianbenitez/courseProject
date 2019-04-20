@@ -2,6 +2,8 @@
 "http://www.w3.org/tr/html4/loose.dtd">
 <%@ page import="java.sql.*" %>
 <%@ page import="java.io.*" %> 
+
+
 <html>
 
 <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
@@ -52,22 +54,11 @@ statement = connection.createStatement();
 String QueryString = "SELECT * FROM books";
 rs = statement.executeQuery(QueryString);
 int n=0;
-String x = "taa";
 %>
 
-<%-- <TABLE class="table-striped" style="background-color: #F4DC78" align="center" border="0" width="70%"> --%>
+
 <table border="2" align="center" width="70%" id="booktable">
 
-<%-- 
-<tr class=sticky-top>
-	<th>Cover</th>
-	<th>Title</th>
-	<th>Author</th>
-	<th>ISBN</th>
-	<th>Price</th>
-</tr>
-
---%>
 
 <%
 while (rs.next() && n<20){
@@ -85,7 +76,9 @@ while (rs.next() && n<20){
 
 
 
-		<td id="bookCell" style="padding: 2px"><a href="singleBook.jsp"><img class="resize"  src=./photos/<%=rs.getString(5)%> /> 
+		<%-- string(1,2,3,4,5) = title, author, isbn, price, cover --%>
+		
+		<td style="padding: 2px"><img class="resize" id="cover" src=./photos/<%=rs.getString(5)%> /> 
 		
 		<style>
 			p{
@@ -94,15 +87,29 @@ while (rs.next() && n<20){
 				margin-bottom:0;
 			}
 		</style>
-					<p><a href="singleBook.jsp"><font size="4" color="blue"><%=rs.getString(1)%></font></a></p>
-					<p><%=rs.getString(2)%></p>
-					<p>$<%=rs.getString(4)%></p>
+		<% 
+		String t=rs.getString(1);
+		String p=rs.getString(4);
+		String c=rs.getString(5);
+		
+		%>
+		
+					<p name="title" id="title"><font size="4" color="blue"><%=t%></font></p>
+					<p name="author" id="author"><%=rs.getString(2)%></p>
+					<p name="price" id="price">$<%=p%></p>
+					<form action="CheckoutController" method="post" >
+						<p><input type="hidden" name="title" value="<%=t%>"></p>
+						<p><input type="hidden" name="price" value="<%=p%>"></p>
+						<p><input type="hidden" name="price" value="<%=c%>"></p>
+						<input type="submit" name="Add to cart" value="Add to cart" /></td>
+					</form>
 		</td>
 
 
 	<% 
 		} 
 	%>
+	
 
 <%
 // close all the connections.

@@ -34,11 +34,12 @@
 	
 <div id="container">
 	<body>	
+	
 		<%-- This creates a "sticky" navbar, which always displays on the page no matter what --%>
 		<nav class="navbar sticky-top navbar-light bg-dark">
 			<ul class="nav">
 				<li><a class="navbar-brand" href="register.jsp">Account Registration</a></li>
-				<li><a class="navbar-brand" href="browse.jsp"> Browse</a></li>
+				<li><a class="navbar-brand" href="table.jsp"> Browse</a></li>
 				<li><a class="navbar-brand" href="adminLogin.jsp"> Admin Portal</a></li>
 			</ul>
 		</nav>	  
