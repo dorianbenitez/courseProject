@@ -62,11 +62,11 @@ int n=0;
 
 <div class="d-flex justify-content-around">
 
-<table class="table">
+<table class="table" align="center" width="80%">
   <thead class="thead-light">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Cover</th>
+      <th scope="col" style="text-align:center">Cover</th>
       <th scope="col">Title</th>
       <th scope="col">Author</th>
       <th scope="col">Price</th>
@@ -74,9 +74,6 @@ int n=0;
     </tr>
   </thead>
   
- 
-
-
 
 
 
@@ -94,16 +91,23 @@ while (rs.next() && n<20){
 
 	<% } %>
 
+<%-- getString(1,2,3) = (price, title, link) --%>
 <tbody>
     <tr>
       <th scope="row"><%= n %></th>
-      <td><img class="checkout-resize" id="link" src=./photos/<%=rs.getString(3)%> /></td>
+      <td style="text-align:center"><img class="checkout-resize" id="link" src=./photos/<%=rs.getString(3)%> /></td>
       <td><%=rs.getString(2)%></td>
       <td>Author</td>
       <td><p><%=rs.getString(1)%></p></td>
-      <td><font color="red">Remove</font></td>
+      
+      	<form action="CheckoutController" method="post" >
+      		<td style="text-align:center">
+					<p><input type="hidden" name="title" value="<%=rs.getString(2)%>"></p>
+					<input class="btn btn-danger" type="submit" name="Add to cart" value="remove" /></td>
+			</td>
+		</form>
     </tr>
-    </tbody>
+   </tbody>
 
 	<% 
 		} 

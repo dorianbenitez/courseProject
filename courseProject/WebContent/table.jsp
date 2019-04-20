@@ -28,12 +28,12 @@
 	</div>
 </div>
 
-		<nav class="navbar sticky-top navbar-light bg-dark">
-			<ul class="nav">
-				<a class="navbar-brand" href="welcome.jsp">Home</a>
-				<a class="navbar-brand" href="checkout.jsp">Checkout</a>
-				<a class="navbar-brand" href ="logout.jsp">Logout</a>
-			</ul>
+<nav class="navbar sticky-top navbar-light bg-dark">
+		<ul class="nav">
+			<a class="navbar-brand" href="welcome.jsp">Home</a>
+			<a class="navbar-brand" href="checkout.jsp">Checkout</a>
+			<a class="navbar-brand" href ="logout.jsp">Logout</a>
+		</ul>
 		</nav><br>
 
 
@@ -92,7 +92,7 @@ while (rs.next() && n<20){
 			p{
 				padding-top:0; 
 				text-align:center; 
-				margin-bottom:0.5px;
+				margin-bottom:0;
 			}
 		</style>
 		<% 
@@ -108,7 +108,7 @@ while (rs.next() && n<20){
 					<form action="CheckoutController" method="post" >
 						<p><input type="hidden" name="title" value="<%=t%>"></p>
 						<p><input type="hidden" name="price" value="<%=p%>"></p>
-						<p><input type="hidden" name="link" value="<%=c%>"></p><br>
+						<p><input type="hidden" name="link" value="<%=c%>"></p>
 						<input class="btn-primary btn-sm" type="submit" name="Add to cart" value="Add to cart" /></td>
 					</form>
 		</td>

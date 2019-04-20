@@ -13,28 +13,52 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/CheckoutController")
 public class CheckoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	
 
     public CheckoutController() {}
     
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//CustomerDao customerDao = new CustomerDaoImpl();
-		
 		CheckoutDao c = new CheckoutDao();
+		CheckoutDao d = new CheckoutDao();
+		
 		String price = request.getParameter("price");
 		String title = request.getParameter("title");
 		String link = request.getParameter("link");
 		String submitType = request.getParameter("Add to cart");
-		c.add(title, price, link);
 		
 		
 		if(submitType.equals("Add to cart")) {
+			c.add(title, price, link);
 			request.getRequestDispatcher("table.jsp").forward(request, response);
+		}	
+		else if(submitType.equals("remove"))
+		{
+			d.delete(title);
+			request.getRequestDispatcher("checkout.jsp").forward(request, response);
 		}
+	}
+	
+	/*
+	protected void doPost2(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		CheckoutDao d = new CheckoutDao();
+		
+		String title = request.getParameter("title");
+		String submitType = request.getParameter("remove");
+		d.delete(title);
+		
+		
+		if(submitType.equals("remove")) {
+			request.getRequestDispatcher("checkout.jsp").forward(request, response);
+		}
+		
 		
 
 	}
+	*/
+	
+	
 
 }
