@@ -65,16 +65,18 @@ int n=0;
 %>
 
 
-<table style="padding:2px;" border="2px" align="center" width="85%" id="booktable">
+<table border="2" align="center" width="80%" id="booktable">
 
 
 <%
-while (rs.next() && n<20){
+while (rs.next()){
 	
 
 %>
 
+<% if(n>=40 && n<60){ %>
 	<% 
+		
 		if(n%5 ==0){
 	%>
 	
@@ -86,22 +88,22 @@ while (rs.next() && n<20){
 
 		<%-- string(1,2,3,4,5) = title, author, isbn, price, cover --%>
 		
-		<td style="padding:2px; text-align:center;">
-			<img class="resize" id="cover" src="<%=rs.getString(5)%>" /> 
+		<td style="padding:2px"><img class="resize" id="cover" src="<%=rs.getString(5)%>" /> 
 		
-			<style>
-				p{
-					padding-top:0; 
-					text-align:center; 
-					margin-bottom:0;
-				}
-			</style>
-			<% 
-				String t=rs.getString(1);
-				String a=rs.getString(2);
-				String i=rs.getString(3);
-				String p=rs.getString(4);
-				String c=rs.getString(5);
+		<style>
+			p{
+				padding-top:0; 
+				text-align:center; 
+				margin-bottom:0;
+			}
+		</style>
+		<% 
+		String t=rs.getString(1);
+		String a=rs.getString(2);
+		String i=rs.getString(3);
+		String p=rs.getString(4);
+		String c=rs.getString(5);
+		
 		%>
 		
 					<p name="title" id="title"><font size="4" color="blue"><%=t%></font></p>
@@ -112,11 +114,11 @@ while (rs.next() && n<20){
 						<p><input type="hidden" name="author" value="<%=a%>"></p>
 						<p><input type="hidden" name="ISBN" value="<%=i%>"></p>
 						<p><input type="hidden" name="price" value="<%=p%>"></p>
-						<p><input type="hidden" name="link" value="<%=c%>"></p><br>
-						<input style="vertical-align: bottom;" class="btn-primary btn-sm" type="submit" name="Add to cart" value="Add to cart" /></td>
+						<p><input type="hidden" name="link" value="<%=c%>"></p>
+						<input class="btn-primary btn-sm" type="submit" name="Add to cart" value="Add to cart" /></td>
 					</form>
 		</td>
-
+<% } %>
 
 	<% 
 	n++;
@@ -148,14 +150,14 @@ out.println("Unable to connect to database.");
 
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center position-sticky">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1">Previous</a>
-    </li>
-    <li class="page-item disabled"><a class="page-link" href="table.jsp">1</a></li>
-    <li class="page-item"><a class="page-link" href="table2.jsp">2</a></li>
-    <li class="page-item"><a class="page-link" href="table3.jsp">3</a></li>
     <li class="page-item">
-      <a class="page-link" href="table2.jsp">Next</a>
+      <a class="page-link" href="table2.jsp">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="table.jsp">1</a></li>
+    <li class="page-item"><a class="page-link" href="table2.jsp">2</a></li>
+    <li class="page-item disabled"><a class="page-link" href="table3.jsp">3</a></li>
+    <li class="page-item disabled">
+      <a class="page-link" href="shop2.jsp">Next</a>
     </li>
   </ul>
 </nav>

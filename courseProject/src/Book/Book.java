@@ -3,11 +3,11 @@ package Book;
 public class Book {
 	private String title;
 	private String ISBN;
-	private double price;
+	private String price;
 	private String author;
 	private String link;
 	
-	public Book(String t, String a, String i, float p, String l){
+	public Book(String t, String a, String i, String p, String l){
 		title = t;
 		author = a;
 		ISBN = i;
@@ -38,11 +38,11 @@ public class Book {
 	{
 		return author;
 	}
-	public void setPrice(double d)
+	public void setPrice(String d)
 	{
 		price = d;
 	}
-	public double getPrice()
+	public String getPrice()
 	{
 		return price;
 	}

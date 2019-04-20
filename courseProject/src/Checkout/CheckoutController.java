@@ -26,11 +26,13 @@ public class CheckoutController extends HttpServlet {
 		String price = request.getParameter("price");
 		String title = request.getParameter("title");
 		String link = request.getParameter("link");
+		String author = request.getParameter("author");
+		String ISBN = request.getParameter("ISBN");
 		String submitType = request.getParameter("Add to cart");
 		
 		
 		if(submitType.equals("Add to cart")) {
-			c.add(title, price, link);
+			c.add(title, price, link, author, ISBN);
 			request.getRequestDispatcher("table.jsp").forward(request, response);
 		}	
 		else if(submitType.equals("remove"))
@@ -39,26 +41,6 @@ public class CheckoutController extends HttpServlet {
 			request.getRequestDispatcher("checkout.jsp").forward(request, response);
 		}
 	}
-	
-	/*
-	protected void doPost2(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		CheckoutDao d = new CheckoutDao();
-		
-		String title = request.getParameter("title");
-		String submitType = request.getParameter("remove");
-		d.delete(title);
-		
-		
-		if(submitType.equals("remove")) {
-			request.getRequestDispatcher("checkout.jsp").forward(request, response);
-		}
-		
-		
-
-	}
-	*/
-	
 	
 
 }

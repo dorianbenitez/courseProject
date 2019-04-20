@@ -24,15 +24,15 @@ public class addBook extends HttpServlet {
 		String title = request.getParameter("title");
 		String author = request.getParameter("author");
 		String isbn = request.getParameter("ISBN");
-		//float price = request.getParameter("price");
+		String price = request.getParameter("price");
 		String link = request.getParameter("link");
 		
 	//	price = Double.parseDouble(request.getParameter("price"));
 		String submitType = request.getParameter("submit");
-		Book b = new Book(title, author, isbn, 0, link);
+		Book b = new Book(title, author, isbn, price, link);
 //		b.setPrice(price);
 		bdao.register(b);
-		if(submitType.equals("submit") && b!=null && b.getTitle()!=null && b.getAuthor()!=null && b.getISBN()!=null && b.getLink()!=null){ 
+		if(submitType.equals("submit") && b!=null && b.getTitle()!=null && b.getAuthor()!=null && b.getISBN()!=null && b.getLink()!=null && b.getPrice()!=null){ 
 			request.setAttribute("yesMessage", b.getTitle() +" by " + b.getAuthor()+ " (ISBN: "+b.getISBN() + ") has been added successfully!");
 			request.getRequestDispatcher("addBook.jsp").forward(request, response);		
 		}

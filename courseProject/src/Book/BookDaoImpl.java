@@ -24,7 +24,7 @@ public class BookDaoImpl implements BookDao{
 		ps.setString(1, b.getTitle());
 		ps.setString(2, b.getAuthor());
 		ps.setString(3, b.getISBN());
-		ps.setDouble(4, b.getPrice());
+		ps.setString(4, b.getPrice());
 		ps.setString(5, b.getLink());
 		
 		status = ps.executeUpdate();
@@ -36,7 +36,26 @@ public class BookDaoImpl implements BookDao{
 	}
 	return status;
 }
-public Book validateBook(String title, String author, String isbn, float price, String link) {
+	
+	
+	
+	public int delete(Book d) {
+		int status = 0;
+		try{
+			conn = db.getConnection();
+			ps = conn.prepareStatement("delete from books where title=?");
+			ps.setString(1, d.getTitle());
+			status = ps.executeUpdate();
+			conn.close();
+		}catch(Exception e){
+			System.out.println(e);
+		}
+		return status;
+	}
+	
+	
+	
+public Book validateBook(String title, String author, String isbn, String price, String link) {
 	Book b = new Book(title,author,isbn, price, link);
 	try{
 		conn = db.getConnection();
@@ -61,6 +80,14 @@ public Book validateBook(String title, String author, String isbn, float price, 
 public Book validateBook(String title, String author, String isbn, double price) {
 	// TODO Auto-generated method stub
 	return null;
+}
+
+
+
+@Override
+public void delete(String title) {
+	// TODO Auto-generated method stub
+	
 }
 
 }

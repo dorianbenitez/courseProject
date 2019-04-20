@@ -35,24 +35,13 @@
 <body>
 	
 	
-	
-	<%-- <%
-		DbManager db = new DbManager();
-		Connection conn = (Connection) db.getConnection();
-		if(conn == null)
-			out.print("connection failed");
-		else
-			out.print("Please enter the information for the book you would like to add or remove..");
-	%> --%> 
-	
-	
 	<form name="addBookForm" action="addBook" method="post" onsubmit="return loginValidate()">
 	<br>
 	
 			<nav class="navbar sticky-top navbar-light bg-dark">
 			<ul class="nav">
 				<li><a class="navbar-brand" href="adminWelcome.jsp">Home</a></li>
-				<li><a class="navbar-brand" href="shop.jsp"> Browse Books</a></li>
+				<li><a class="navbar-brand" href="table3.jsp"> Browse Books</a></li>
 			</ul>
 		</nav>	  
 	
@@ -89,15 +78,8 @@
  	 
  	 <tr align="left" valign="top">
 	   <td>Price (Ex. 6.99):</td>
- 		 <td><input type="text" name ="ISBN"/></td>
+ 		 <td><input type="text" name ="price"/></td>
  	 </tr>
- 	 
- 	 <%-- 
- 	 <tr align="left" valign="top">
- 	 	<td>Book Cover (.png or .jpeg):</td>
-  			<td><input type="file" id="link" name="link" accept="image/png, image/jpeg"></td>
-	 </tr>
-	 --%>
 	 
 	  	 <tr align="left" valign="top">
 	   <td>Link:</td>

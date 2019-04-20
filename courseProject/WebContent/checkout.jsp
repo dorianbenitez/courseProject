@@ -91,14 +91,14 @@ while (rs.next() && n<20){
 
 	<% } %>
 
-<%-- getString(1,2,3) = (price, title, link) --%>
+<%-- getString(1,2,3,4,5) = (price, title, link, author, ISBN) --%>
 <tbody>
     <tr>
       <th scope="row"><%= n %></th>
-      <td style="text-align:center"><img class="checkout-resize" id="link" src=./photos/<%=rs.getString(3)%> /></td>
+      <td style="text-align:center"><img class="checkout-resize" id="link" src="<%=rs.getString(3)%>" /></td>
       <td><%=rs.getString(2)%></td>
-      <td>Author</td>
-      <td><p><%=rs.getString(1)%></p></td>
+      <td><%= rs.getString(4)%></td>
+      <td><p>$<%=rs.getString(1)%></p></td>
       
       	<form action="CheckoutController" method="post" >
       		<td style="text-align:center">

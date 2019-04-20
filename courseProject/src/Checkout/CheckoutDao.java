@@ -1,10 +1,9 @@
 package Checkout;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+//import java.sql.ResultSet;
 
 import db.DbManager;
-import domain.login.Customer;
 
 public class CheckoutDao {
 	
@@ -12,14 +11,16 @@ public class CheckoutDao {
 	static PreparedStatement ps;
 	DbManager db = new DbManager();
 	
-	public int add(String title, String price, String link) {
+	public int add(String title, String price, String link, String author, String ISBN) {
 		int status = 0;
 		try{
 			conn = db.getConnection();
-			ps = conn.prepareStatement("insert into cart values(?,?,?)");
+			ps = conn.prepareStatement("insert into cart values(?,?,?,?,?)");
 			ps.setString(1, price);
 			ps.setString(2, title);
 			ps.setString(3, link);
+			ps.setString(4, author);
+			ps.setString(5, ISBN);
 			status = ps.executeUpdate();
 			conn.close();
 		}catch(Exception e){

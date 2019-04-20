@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Checkout.CheckoutDao;
+
 public class BookController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -15,17 +17,27 @@ public class BookController extends HttpServlet {
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 			BookDao bdao = new BookDaoImpl();
+			BookDao d = new BookDaoImpl();
+			
 			String title = request.getParameter("title");
 			String author = request.getParameter("author");
 			String isbn = request.getParameter("isbn");
 			//float price = request.getParameter("price");
 			String link = request.getParameter("link");
+			
 			String submitType = request.getParameter("submit");
+			
+			
 			Book b = bdao.validateBook(title,author,isbn,0);
+			
 			if(submitType.equals(isbn))
 					{
 					
 					}
+			else if(submitType.equals("remove")) {
+				d.delete(title);
+				request.getRequestDispatcher("checkout.jsp").forward(request, response);
+			}
 		
 		}
 	}
