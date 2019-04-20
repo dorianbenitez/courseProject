@@ -24,7 +24,7 @@
 
 <div style="background: url(https://www.heet.org.uk/wp-content/uploads/2016/06/gradient-background-26046-26731-hd-wallpapers.jpg.png) !important" class="jumbotron">
 	<div class="text-center">
-		<font size="5" color=#ebf1ed> <h1>Book Table</h1> </font>
+		<font size="5" color=#ebf1ed> <h1>Shop All Books</h1> </font>
 	</div>
 </div>
 
@@ -36,7 +36,6 @@
 		</ul>
 		</nav><br>
 		
-
 
 <%
 try {
@@ -66,17 +65,17 @@ int n=0;
 %>
 
 
-<table border="2" align="center" width="80%" id="booktable">
+<table style="padding:2px;" border="2px" align="center" width="85%" id="booktable">
 
 
 <%
 while (rs.next() && n<20){
-	n++;
+	
 
 %>
 
 	<% 
-		if(n%6 ==0){
+		if(n%5 ==0){
 	%>
 	
 		<tr></tr>
@@ -87,30 +86,32 @@ while (rs.next() && n<20){
 
 		<%-- string(1,2,3,4,5) = title, author, isbn, price, cover --%>
 		
-		<td style="padding:2px"><img class="resize" id="cover" src=./photos/<%=rs.getString(5)%> /> 
+		<td style="padding:2px; text-align:center;">
+			<img class="resize" id="cover" src="<%=rs.getString(5)%>" /> 
 		
-		<style>
-			p{
-				padding-top:0; 
-				text-align:center; 
-				margin-bottom:0.5px;
-			}
-		</style>
-		<% 
-		String title=rs.getString(1);
-		String price=rs.getString(4);
-		String cover=rs.getString(5);
-		
+			<style>
+				p{
+					padding-top:0; 
+					text-align:center; 
+					margin-bottom:0;
+				}
+			</style>
+			<% 
+				String t=rs.getString(1);
+				String a=rs.getString(2);
+				String i=rs.getString(3);
+				String p=rs.getString(4);
+				String c=rs.getString(5);
 		%>
 		
-					<p name="title" id="title"><font size="4" color="blue"><%=title%></font></p>
+					<p name="title" id="title"><font size="4" color="blue"><%=t%></font></p>
 					<p name="author" id="author"><%=rs.getString(2)%></p>
-					<p name="price" id="price">$<%=price%></p>
-					</form>
+					<p name="price" id="price">$<%=p%></p>
 		</td>
 
 
 	<% 
+	n++;
 		} 
 	%>
 	
@@ -142,11 +143,11 @@ out.println("Unable to connect to database.");
     <li class="page-item disabled">
       <a class="page-link" href="#" tabindex="-1">Previous</a>
     </li>
-    <li class="page-item"><a class="page-link" href="shop.jsp">1</a></li>
-    <li class="page-item"><a class="page-link" href="shop2.jsp">2</a></li>
-    <li class="page-item"><a class="page-link" href="shop3.jsp">3</a></li>
+    <li class="page-item disabled"><a class="page-link" href="browse.jsp">1</a></li>
+    <li class="page-item"><a class="page-link" href="browse2.jsp">2</a></li>
+    <li class="page-item"><a class="page-link" href="browse3.jsp">3</a></li>
     <li class="page-item">
-      <a class="page-link" href="shop2.jsp">Next</a>
+      <a class="page-link" href="browse2.jsp">Next</a>
     </li>
   </ul>
 </nav>

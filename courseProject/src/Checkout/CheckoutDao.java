@@ -44,4 +44,18 @@ public class CheckoutDao {
 		return status;
 	}
 	
+	
+	public int erase(String title) {
+		int status = 0;
+		try{
+			conn = db.getConnection();
+			ps = conn.prepareStatement("delete from cart");
+			status = ps.executeUpdate();
+			conn.close();
+		}catch(Exception e){
+			System.out.println(e);
+		}
+		return status;
+	}
+	
 }

@@ -113,7 +113,11 @@ while (rs.next() && n<20){
 						<p><input type="hidden" name="ISBN" value="<%=i%>"></p>
 						<p><input type="hidden" name="price" value="<%=p%>"></p>
 						<p><input type="hidden" name="link" value="<%=c%>"></p><br>
-						<input style="vertical-align: bottom;" class="btn-primary btn-sm" type="submit" name="Add to cart" value="Add to cart" /></td>
+						
+						<div style="vertical-align: bottom">
+							<input class="btn-primary btn-sm" type="submit" name="Add to cart" value="Add to cart" /></td>
+						</div>
+						
 					</form>
 		</td>
 

@@ -22,6 +22,7 @@ public class CheckoutController extends HttpServlet {
 		
 		CheckoutDao c = new CheckoutDao();
 		CheckoutDao d = new CheckoutDao();
+		CheckoutDao e = new CheckoutDao();
 		
 		String price = request.getParameter("price");
 		String title = request.getParameter("title");
@@ -40,7 +41,11 @@ public class CheckoutController extends HttpServlet {
 			d.delete(title);
 			request.getRequestDispatcher("checkout.jsp").forward(request, response);
 		}
-	}
+		else if(submitType.equals("Submit")) {
+			e.erase(title);
+			request.getRequestDispatcher("final.jsp").forward(request, response);
+		}
 	
 
+}
 }

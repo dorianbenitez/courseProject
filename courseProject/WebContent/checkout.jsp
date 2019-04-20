@@ -133,7 +133,13 @@ out.println("Unable to connect to database.");
 
 <br>
 
-<p style="text-align: center">Total Price: </p>
+<div style="width:100%; height:100%; text-align: center">
+
+<p>Total Price: </p>
+<a class="btn btn-primary" href="payment.jsp" role="button">Final Checkout</a>
+<br><br><br>
+
+</div>
 
 
 </font>	

@@ -1,13 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//Dtd HTML 4.01 transitional//EN"
+"http://www.w3.org/tr/html4/loose.dtd">
+<%@ page import="java.sql.*" %>
+<%@ page import="java.io.*" %> 
+
+
 <html>
-
-<head>
-<meta charset="UTF-8">
-<title>Browsing Page2</title>
-</head>
-
 
 <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 <link rel="stylesheet" href="css/bootstrap-grid.css" type="text/css">
@@ -18,88 +15,144 @@
 <link rel="stylesheet" href="login.css" type="text/css">
 
 
-<div id="container">
+<head>
+	<title>display data from the table using jsp</title>
+</head>
+
 
 <body>
-	<div style="background: url(https://www.heet.org.uk/wp-content/uploads/2016/06/gradient-background-26046-26731-hd-wallpapers.jpg.png) !important" class="jumbotron">
-		<div class="text-center">
-			<font size="5" color=#ebf1ed> <h1>Browse Books</h1> </font>
-		</div>
+
+<div style="background: url(https://www.heet.org.uk/wp-content/uploads/2016/06/gradient-background-26046-26731-hd-wallpapers.jpg.png) !important" class="jumbotron">
+	<div class="text-center">
+		<font size="5" color=#ebf1ed> <h1>Shop All Books</h1> </font>
 	</div>
-		
+</div>
+
 		<%-- <div class="nav-bar">  --%>
 		<nav class="navbar sticky-top navbar-light bg-dark">
 		<ul class="nav">
 			<li><a class="navbar-brand" href="login.jsp">Home</a></li>
 			<li><a class="navbar-brand" href ="register.jsp">Account Registration</a>
 		</ul>
-		</nav>
-		
-		
-		
-<table border="1" align="center" width="70%">
-	<tr> <br>
-		<td><img class="resize" src="https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr01/2013/3/25/12/enhanced-buzz-23705-1364227511-13.jpg?output-quality=auto&output-format=auto&downsize=360:*" alt="">
-					<p>Harry Potter and the Philosopher's Stone</p></td>
-		<td><img class="resize" src="https://shortlist.imgix.net/app/uploads/2012/06/24225443/the-50-coolest-book-covers-37.jpg?w=1200&h=1&fit=max&auto=format%2Ccompress" alt="" >
-		<p> Eragon </p> </td>
-		<td><img class="resize" src="https://img.apmcdn.org/76930dd3881506385612bf68c36c6c406c7ae278/uncropped/4cc4b6-20150304-catch22.jpg" alt="">
-		<p> Farenheit 451 </p> </td>
-		<td><img class="resize" src="https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2017/10/the-50-coolest-book-covers-15.jpg" alt="">
-		<p> The Alchemist </p> </td>
-		<td><img class="resize" src="https://i.pinimg.com/originals/43/75/91/4375911b6896ef863b695687bef8a53b.png" alt=""></td>
-	</tr>
+		</nav><br>
 
-	<tr>
-		<td><img class="resize" src="http://tesseraguild.com/wp-content/uploads/2018/06/Hobbit.jpg" alt=""></td>
-		<td><img class="resize" src="https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr03/2013/3/25/11/enhanced-buzz-27766-1364225968-12.jpg?downsize=700:*&output-format=auto&output-quality=auto" alt=""></td>
-		<td><img class="resize" src="http://4.bp.blogspot.com/-KVtK6iK5hs8/U80l-tCWnJI/AAAAAAAAAYw/2u6mbvIb9iI/s1600/wells-chelovek-nevidimka.jpg" alt=""></td>
-		<td><img class="resize" src="https://www.scholastic.com/content5/media/products/89/9780446310789_mres.jpg" alt=""></td>
-		<td><img class="resize" src="https://s3.scoopwhoop.com/anj/book/d1342e0d-bd22-4e2a-8614-3489e295f589.jpg" alt=""></td>
-	</tr>
-	
-	<tr>
-		<td><img class="resize" src="http://tesseraguild.com/wp-content/uploads/2018/06/Hobbit.jpg" alt=""></td>
-		<td><img class="resize" src="https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr03/2013/3/25/11/enhanced-buzz-27766-1364225968-12.jpg?downsize=700:*&output-format=auto&output-quality=auto" alt=""></td>
-		<td><img class="resize" src="http://4.bp.blogspot.com/-KVtK6iK5hs8/U80l-tCWnJI/AAAAAAAAAYw/2u6mbvIb9iI/s1600/wells-chelovek-nevidimka.jpg" alt=""></td>
-		<td><img class="resize" src="https://www.scholastic.com/content5/media/products/89/9780446310789_mres.jpg" alt=""></td>
-		<td><img class="resize" src="https://s3.scoopwhoop.com/anj/book/d1342e0d-bd22-4e2a-8614-3489e295f589.jpg" alt=""></td>
-	</tr>
-	
-	<tr>
-		<td><img class="resize" src="http://tesseraguild.com/wp-content/uploads/2018/06/Hobbit.jpg" alt=""></td>
-		<td><img class="resize" src="https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr03/2013/3/25/11/enhanced-buzz-27766-1364225968-12.jpg?downsize=700:*&output-format=auto&output-quality=auto" alt=""></td>
-		<td><img class="resize" src="http://4.bp.blogspot.com/-KVtK6iK5hs8/U80l-tCWnJI/AAAAAAAAAYw/2u6mbvIb9iI/s1600/wells-chelovek-nevidimka.jpg" alt=""></td>
-		<td><img class="resize" src="https://www.scholastic.com/content5/media/products/89/9780446310789_mres.jpg" alt=""></td>
-		<td><img class="resize" src="https://s3.scoopwhoop.com/anj/book/d1342e0d-bd22-4e2a-8614-3489e295f589.jpg" alt=""></td>
-	</tr>
-	
-		<tr>
-		<td><img class="resize" src="http://tesseraguild.com/wp-content/uploads/2018/06/Hobbit.jpg" alt=""></td>
-		<td><img class="resize" src="https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr03/2013/3/25/11/enhanced-buzz-27766-1364225968-12.jpg?downsize=700:*&output-format=auto&output-quality=auto" alt=""></td>
-		<td><img class="resize" src="http://4.bp.blogspot.com/-KVtK6iK5hs8/U80l-tCWnJI/AAAAAAAAAYw/2u6mbvIb9iI/s1600/wells-chelovek-nevidimka.jpg" alt=""></td>
-		<td><img class="resize" src="https://www.scholastic.com/content5/media/products/89/9780446310789_mres.jpg" alt=""></td>
-		<td><img class="resize" src="https://s3.scoopwhoop.com/anj/book/d1342e0d-bd22-4e2a-8614-3489e295f589.jpg" alt=""></td>
-	</tr>
-</table>
+<%
+try {
+/* Create string of connection url within specified format with machine
+name, port number and database name. Here machine name id localhost and 
+database name is student. */
+String connectionURL = "jdbc:mysql://127.0.0.1:3306/coursedatabase";
+// declare a connection by using Connection interface
+Connection connection = null;
+/* declare object of Statement interface that is used for executing sql 
+statements. */
+Statement statement = null;
+// declare a resultset that uses as a table for output data from tha table.
+ResultSet rs = null;
+// Load JBBC driver "com.mysql.jdbc.Driver"
+Class.forName("com.mysql.jdbc.Driver").newInstance();
+/* Create a connection by using getConnection() method that takes parameters 
+of string type connection url, user name and password to connect to database.*/
+connection = DriverManager.getConnection(connectionURL, "root", "Chump4870");
+/* createStatement() is used for create statement object that is used for 
+sending sql statements to the specified database. */
+statement = connection.createStatement();
+// sql query to retrieve values from the secified table.
+String QueryString = "SELECT * FROM books";
+rs = statement.executeQuery(QueryString);
+int n=0;
+%>
 
 
-</body>
-</div>
+<table border="2" align="center" width="80%" id="booktable">
+
+
+<%
+while (rs.next()){
+	
+
+%>
+
+<% if(n>=20 && n<40){ %>
+	<% 
+		
+		if(n%5 ==0){
+	%>
+	
+		<tr></tr>
+
+	<% } %>
+
+
+
+		<%-- string(1,2,3,4,5) = title, author, isbn, price, cover --%>
+		
+		<td style="padding:2px"><img class="resize" id="cover" src="<%=rs.getString(5)%>" /> 
+		
+		<style>
+			p{
+				padding-top:0; 
+				text-align:center; 
+				margin-bottom:0;
+			}
+		</style>
+		<% 
+		String t=rs.getString(1);
+		String a=rs.getString(2);
+		String i=rs.getString(3);
+		String p=rs.getString(4);
+		String c=rs.getString(5);
+		
+		%>
+		
+					<p name="title" id="title"><font size="4" color="blue"><%=t%></font></p>
+					<p name="author" id="author"><%=rs.getString(2)%></p>
+					<p name="price" id="price">$<%=p%></p>
+		</td>
+<% } %>
+
+	<% 
+	n++;
+		} 
+	%>
+	
+
+<%
+// close all the connections.
+rs.close();
+statement.close();
+connection.close();
+} 
+catch (Exception ex) {
+%>
+
+<font size="+3" color="red"></b>
+<%
+out.println("Unable to connect to database.");
+}
+%>
+
+</TABLE>
+
+
+</font>
 
 <br><br>
+
 <nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    <li class="page-item"> <a class="page-link" href="browse.jsp">Previous</a>
+  <ul class="pagination justify-content-center position-sticky">
+    <li class="page-item">
+      <a class="page-link" href="browse.jsp">Previous</a>
     </li>
     <li class="page-item"><a class="page-link" href="browse.jsp">1</a></li>
-    <li class="page-item"><a class="page-link" href="browse2.jsp">2</a></li>
+    <li class="page-item disabled"><a class="page-link" href="browse2.jsp">2</a></li>
     <li class="page-item"><a class="page-link" href="browse3.jsp">3</a></li>
     <li class="page-item">
       <a class="page-link" href="browse3.jsp">Next</a>
     </li>
   </ul>
 </nav>
+		
 
-
+</body>
 </html>

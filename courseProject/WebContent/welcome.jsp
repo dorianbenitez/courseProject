@@ -34,21 +34,57 @@
 				<li><a class="navbar-brand" href="table.jsp">Shop Books</a></li>
 				<li><a class="navbar-brand" href="logout.jsp"> Logout</a></li>
 			</ul>
-		</nav>	
-		<br>
+		</nav>	<br>
+	
 		
 		
 		<table>
-			<tr><th>Noteworthy Best Sellers</th></tr>
-				<td><img class="resize" src="http://tesseraguild.com/wp-content/uploads/2018/06/Hobbit.jpg"></td>
-				<td><img class="resize" src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></td>
-				<td><img class="resize" src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></td>
-				<td><img class="resize" src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></td>
-				<td><img class="resize" src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></td>
+		<tr><th>Award Winning Books</th></tr>
+			<tr>
+				<td><a href="browse3.jsp"><img class="resize" src="https://images-na.ssl-images-amazon.com/images/I/81h2gWPTYJL.jpg"></a></td>
+				<td><a href="browse3.jsp"><img class="resize" src="https://r.wheelers.co/bk/large/978055/9780552565974.jpg"></a></td>
+				<td><a href="browse.jsp"><img class="resize" src="https://images-na.ssl-images-amazon.com/images/I/81WojUxbbFL.jpg"></a></td>
+				<td><a href="browse2.jsp"><img class="resize" src="https://prodimage.images-bn.com/pimages/9780062797155_p0_v4_s550x406.jpg"></a></td>
+				<td><a href="browse2.jsp"><img class="resize" src="https://images-na.ssl-images-amazon.com/images/I/51GWPea6icL._SX329_BO1,204,203,200_.jpg"></a></td>
+			</tr>
+			
+			<tr><th>Best Selling Fiction</th></tr>
+			<tr>
+				<td><a href="browse.jsp"><img class="resize" src="https://images-na.ssl-images-amazon.com/images/I/81WWiiLgEyL.jpg"></a></td>
+				<td><a href="browse.jsp"><img class="resize" src="https://images-na.ssl-images-amazon.com/images/I/51aw-U92Y2L._SX320_BO1,204,203,200_.jpg"></a></td>
+				<td><a href="browse.jsp"><img class="resize" src="https://images-na.ssl-images-amazon.com/images/I/91xI4GjM7jL.jpg"></a></td>
+				<td><a href="browse2.jsp"><img class="resize" src="https://images-na.ssl-images-amazon.com/images/I/51rTUYqI7cL._SX339_BO1,204,203,200_.jpg"></a></td>
+				<td><a href="browse2.jsp"><img class="resize" src="https://images-na.ssl-images-amazon.com/images/I/51xnnD8DqTL.jpg"></a></td>
+			</tr>
 		
-		
-		
-		</table>
+		<tr><th>Best Selling Non-Fiction</th></tr>
+			<tr>
+				<td><a href="browse.jsp"><img class="resize" src="https://images-na.ssl-images-amazon.com/images/I/71k-Dje-W-L.jpg"></a></td>
+				<td><a href="browse.jsp"><img class="resize" src="https://images-na.ssl-images-amazon.com/images/I/81tN8IGERxL.jpg"></a></td>
+				<td><a href="browse.jsp"><img class="resize" src="https://images-na.ssl-images-amazon.com/images/I/51EobVielcL._SX331_BO1,204,203,200_.jpg"></a></td>
+				<td><a href="browse2.jsp"><img class="resize" src="https://images-na.ssl-images-amazon.com/images/I/51ZoMO5mJaL._SX351_BO1,204,203,200_.jpg"></a></td>
+				<td><a href="browse3.jsp"><img class="resize" src="https://images-na.ssl-images-amazon.com/images/I/41xgrVdf4ML._SX332_BO1,204,203,200_.jpg"></a></td>
+			</tr>
+			
+			
+			<tr><th>Best Selling Romance</th></tr>
+			<tr>
+				<td><a href="browse3.jsp"><img class="resize" src="https://syndetics.com/index.aspx?isbn=0425241173/LC.GIF&client=springshare"></a></td>
+				<td><a href="browse3.jsp"><img class="resize" src="http://images.amazon.com/images/P/1931520062.jpg"></a></td>
+				<td><a href="browse.jsp"><img class="resize" src="https://syndetics.com/index.aspx?isbn=9781618220301/LC.GIF&client=springshare"></a></td>
+				<td><a href="browse2.jsp"><img class="resize" src="https://syndetics.com/index.aspx?isbn=0525940103/LC.GIF&client=springshare"></a></td>
+				<td><a href="browse2.jsp"><img class="resize" src="https://syndetics.com/index.aspx?isbn=0451209451/LC.GIF&client=springshare"></a></td>
+			</tr>
+			
+			<tr><th>Best Selling Sports</th></tr>
+			<tr>
+				<td><a href="browse3.jsp"><img class="resize" src="https://images-na.ssl-images-amazon.com/images/I/517Ug5LZZFL._SX327_BO1,204,203,200_.jpg"></a></td>
+				<td><a href="browse3.jsp"><img class="resize" src="https://images-na.ssl-images-amazon.com/images/I/A1z7ywkr2wL.jpg"></a></td>
+				<td><a href="browse.jsp"><img class="resize" src="http://prodimage.images-bn.com/pimages/9781491490242_p0_v1_s1200x630.jpg"></a></td>
+				<td><a href="browse2.jsp"><img class="resize" src="https://prodimage.images-bn.com/pimages/9781429680042_p0_v1_s550x406.jpg"></a></td>
+				<td><a href="browse2.jsp"><img class="resize" src="https://prodimage.images-bn.com/pimages/9781476551883_p0_v1_s550x406.jpg"></a></td>
+			</tr>
+		</table><br><br>
 
 </body>
 </div>

@@ -35,7 +35,7 @@
 		<nav class="navbar sticky-top navbar-light bg-dark">
 			<ul class="nav">
 				<li><a class="navbar-brand" href="welcome.jsp">Home</a></li>
-				<li><a class="navbar-brand" href="shop.jsp"> Continue Shopping</a></li>
+				<li><a class="navbar-brand" href="table.jsp"> Continue Shopping</a></li>
 				<li><a class="navbar-brand" href="logout.jsp"> Logout</a></li>
 			</ul>
 		</nav>	
@@ -109,10 +109,13 @@
 	   	<td><input type="password" name ="password" id="password"/></td>
  	 </tr>
 
+
 	<tr align="left" valign="top">
-		<td> 
-  			<input type="submit" name="submit" value="Submit" /> 
-  		</td>
+		<form action="CheckoutController" method="post" >
+      		<td style="text-align:center">
+					<input class="btn-primary" type="submit" name="Add to cart" value="Submit" /></td>
+			</td>
+		</form>
   	</tr>
 	
 	</table>
