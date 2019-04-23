@@ -7,10 +7,9 @@
 <title>logout page</title>
 </head>
 <body>
-<%
-	session.invalidate();
-	response.sendRedirect("login.jsp");
-%>
-
+	<%
+		session.invalidate();
+		response.sendRedirect("login.jsp");
+	%>
 </body>
 </html>

@@ -34,7 +34,7 @@
 			<a class="navbar-brand" href="checkout.jsp">Checkout</a>
 			<a class="navbar-brand" href ="logout.jsp">Logout</a>
 		</ul>
-		</nav><br>
+</nav><br>
 
 
 <%
@@ -70,22 +70,15 @@ int n=0;
 
 <%
 while (rs.next() && n<20){
-	
-
 %>
-
 	<% 
 		if(n%5 ==0){
 	%>
-	
 		<tr></tr>
-
 	<% } %>
 
 
-
-		<%-- string(1,2,3,4,5) = title, author, isbn, price, cover --%>
-		
+		<%-- string(1,2,3,4,5) = title, author, isbn, price, cover --%>		
 		<td style="padding:20px; text-align:center; width:17%; position: relative; border: solid 1px; background-color:#F1EEE3;">
 			<p style="text-align:center"> <img class="resize" id="cover" src="<%=rs.getString(5)%>" /> </p>
 		
@@ -102,7 +95,7 @@ while (rs.next() && n<20){
 				String i=rs.getString(3);
 				String p=rs.getString(4);
 				String c=rs.getString(5);
-		%>
+			%>
 		
 					<p name="title" id="title"><font size="4" color="blue"><%=t%></font></p> 
       				
@@ -155,10 +148,10 @@ out.println("Unable to connect to database.");
 }
 %>
 
+</font>
+
 </TABLE>
 
-
-</font>
 
 <br><br>
 

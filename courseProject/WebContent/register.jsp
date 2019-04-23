@@ -31,7 +31,7 @@
 	
 			<nav class="navbar sticky-top navbar-light bg-dark">
 			<ul class="nav">
-				<li><a class="navbar-brand" href="login.jsp">Home</a></li>
+			<li><a class="navbar-brand" onclick="history.go(-1)""><font color="white">Go Back</font></a></li>
 			</ul>
 		</nav>	  
 

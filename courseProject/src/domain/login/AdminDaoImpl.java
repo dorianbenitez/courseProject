@@ -32,7 +32,6 @@ public class AdminDaoImpl implements AdminDao {
 		return status;
 	}
 	
-	
 
 	@Override
 	public Admin validateAdmin(AdminLogin login) {

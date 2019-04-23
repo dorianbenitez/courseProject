@@ -5090,6 +5090,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   margin-bottom: 0;
   background-color: #ff9d44;
   border-radius: 0.3rem;
+  text-align:center;
 }
 
 /*

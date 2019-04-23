@@ -34,7 +34,6 @@
 	
 <div id="container">
 	<body>	
-	
 		<%-- This creates a "sticky" navbar, which always displays on the page no matter what --%>
 		<nav class="navbar sticky-top navbar-light bg-dark">
 			<ul class="nav">
@@ -47,6 +46,12 @@
 
 	<div class="text-center">
 		<div id="content">
+		<br>
+		
+		
+		<div >
+  			<u><strong><font color="green" size="3">${successMessage}</font></strong></u>
+		</div>
 			<br> <%out.print("Please sign-in or register below.."); %> <br/>
 		</div>
 	
@@ -57,21 +62,19 @@
 		<%-- Each "tr" function centers the text, and displays "..." with an input box --%>
  	 	<tr align="center" valign="top">
  	 		<td>Username:</td>
-  			<td><input type="text" name ="username" id="username"/></td>
-  			<br><br>
+  			<td><input type="text" name ="username" id="username"/></td><br><br>
 		</tr>
 		 
 		 <tr align="center" valign="top">
 		 	<td>Password:</td>
- 		 		<td><input type="password" name ="password" id="password"/></td>
- 		 	<br><br>
+ 		 		<td><input type="password" name ="password" id="password"/></td><br><br>
  		 </tr>
 
 		<tr align="center" valign="top">
 			<td> 
-  			<input type="submit" name="submit" value="login" /></td>
-  		</tr>
-  		<br><br>
+  				<input type="submit" name="submit" value="login" />
+  			</td>
+  		</tr><br><br>
   	
   		<tr align="center" valign="top">
 			<font size="2"><td><a href="register.jsp">Don't have an account? Register here!</a></td></font>  
@@ -80,6 +83,7 @@
  		</form> 
  	
  	</div>
+ 	
  
  	
 </body>

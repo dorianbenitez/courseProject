@@ -34,23 +34,20 @@
 
 <body>
 	
-	
-	<form name="addBookForm" action="addBook" method="post" onsubmit="return loginValidate()">
-	<br>
+	<form name="addBookForm" action="addBook" method="post" onsubmit="return loginValidate()"><br>
 	
 			<nav class="navbar sticky-top navbar-light bg-dark">
-			<ul class="nav">
-				<li><a class="navbar-brand" href="adminWelcome.jsp">Home</a></li>
-				<li><a class="navbar-brand" href="table.jsp"> Browse Books</a></li>
-			</ul>
-		</nav>	  
+				<ul class="nav">
+					<li><a class="navbar-brand" href="adminWelcome.jsp">Home</a></li>
+					<li><a class="navbar-brand" href="table.jsp"> Browse Books</a></li>
+				</ul>
+			</nav>	  
 	
 	
 
 	<font size="3" color="green">${yesMessage}</font>
   	<font size="3" color="red">${noMessage}</font>
-  	<font size="3" color="green">${successMessage}</font>
-  	<br>
+  	<font size="3" color="green">${successMessage}</font><br>
 	
 	
 	
@@ -58,41 +55,41 @@
 			<br> <font size="3">Please enter the information for the book you would like to add or remove..</font> <br><br>
 	</div>
 	
-	<table border = "0">
 	
- 	 <tr align="left" valign="top">
- 	 	<td>Book Title:</td>
+	<table border = "0">
+ 		<tr align="left" valign="top">
+ 	 		<td>Book Title:</td>
   			<td><input type="text" name="title" /></td>
-	 </tr>
+	 	</tr>
 	 
 	 
-	 <tr align="left" valign="top">
-	   <td>Author Name:</td>
- 		 <td><input type="text" name ="author"/></td>
- 	 </tr>
+	 	<tr align="left" valign="top">
+	   		<td>Author Name:</td>
+ 		 	<td><input type="text" name ="author"/></td>
+ 	 	</tr>
  	 
- 	 <tr align="left" valign="top">
-	   <td>ISBN:</td>
- 		 <td><input type="text" name ="ISBN"/></td>
- 	 </tr>
+ 	 	<tr align="left" valign="top">
+	   		<td>ISBN:</td>
+ 		 	<td><input type="text" name ="ISBN"/></td>
+ 	 	</tr>
  	 
- 	 <tr align="left" valign="top">
-	   <td>Price (Ex. 6.99):</td>
- 		 <td><input type="text" name ="price"/></td>
- 	 </tr>
+ 	 	<tr align="left" valign="top">
+	   		<td>Price (Ex. 6.99):</td>
+ 		 	<td><input type="text" name ="price"/></td>
+ 	 	</tr>
 	 
 	  	 <tr align="left" valign="top">
-	   <td>Link:</td>
- 		 <td><input type="text" name ="link"/></td>
- 	 </tr>
+	   		<td>Link:</td>
+ 		 	<td><input type="text" name ="link"/></td>
+ 	 	</tr>
 
 	
-	<tr align="left" valign="top">
-		<td> 
+		<tr align="left" valign="top">
+			<td> 
   			<input type="submit" name="submit" value="submit" /> 
   			<%--  <input type="submit" name="submit" value="delete" />   --%>
-  		</td>
-  	</tr>
+  			</td>
+  		</tr>
 	
 
  	</table>

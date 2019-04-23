@@ -24,14 +24,14 @@
 
 <div style="background: url(https://www.heet.org.uk/wp-content/uploads/2016/06/gradient-background-26046-26731-hd-wallpapers.jpg.png) !important" class="jumbotron">
 	<div class="text-center">
-		<font size="5" color=#ebf1ed> <h1>Shop All Books</h1> </font>
+		<font size="5" color=#ebf1ed> <h1>Browse All Books</h1> </font>
 	</div>
 </div>
 
 		<%-- <div class="nav-bar">  --%>
 		<nav class="navbar sticky-top navbar-light bg-dark">
 		<ul class="nav">
-			<li><a class="navbar-brand" href="login.jsp">Home</a></li>
+			<li><a class="navbar-brand" onclick="history.go(-1)""><font color="white">Go Back</font></a></li>
 			<li><a class="navbar-brand" href ="register.jsp">Account Registration</a>
 		</ul>
 		</nav><br>
@@ -88,7 +88,7 @@ while (rs.next()){
 
 		<%-- string(1,2,3,4,5) = title, author, isbn, price, cover --%>
 		
-<td style="padding:20px; text-align:center; width:17%; position: relative; border: solid 1px;">
+<td style="padding:20px; text-align:center; width:17%; position: relative; border: solid 1px; background-color:#F1EEE3;">
 			<p style="text-align:center"> <img class="resize" id="cover" src="<%=rs.getString(5)%>" /> </p>
 		
 		<style>
@@ -110,6 +110,42 @@ while (rs.next()){
 					<p name="title" id="title"><font size="4" color="blue"><%=t%></font></p>
 					<p name="author" id="author"><%=rs.getString(2)%></p>
 					<p name="price" id="price">$<%=p%></p>
+					
+												<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>
+		
+					<form action="CheckoutController" method="post" >
+						<p><input type="hidden" name="title" value="<%=t%>"></p>
+						<p><input type="hidden" name="author" value="<%=a%>"></p>
+						<p><input type="hidden" name="ISBN" value="<%=i%>"></p>
+						<p><input type="hidden" name="price" value="<%=p%>"></p>
+						<p><input type="hidden" name="link" value="<%=c%>"></p><br>
+						
+						
+						<div id="bottomCell">
+							<a href="#" data-toggle="tooltip" title="You must be signed in as a customer to purcahse books"><input class="btn-secondary btn-sm" type="submit" name="Add to cart" value="Add to cart" disabled/></a>
+						</div>
+						</form>
+					
+					<form action = "singleBook.jsp" method = "GET">
+        				<p><input type="hidden" name="title" value="<%=t%>"></p>
+						<p><input type="hidden" name="author" value="<%=a%>"></p>
+						<p><input type="hidden" name="ISBN" value="<%=i%>"></p>
+						<p><input type="hidden" name="price" value="<%=p%>"></p>
+						<p><input type="hidden" name="link" value="<%=c%>"></p><br>
+         			<input class="btn-primary btn-sm" type="submit" value = "More Details..." />
+      				</form>
+					
+					
+					
+					
+					
+					
+					
+					
 		</td>
 <% } %>
 
