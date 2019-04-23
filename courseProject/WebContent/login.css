@@ -5,6 +5,7 @@ Base styles
 ------------------------*/
 
 
+
 .tab 
 { 
 	text-align: right;
@@ -247,6 +248,11 @@ img.resize {
 img.checkout-resize{
 	width:100px;
 	height: 150px;
+}
+
+img.resizeFinal {
+  width:200px;
+  height:255px;
 }
 
 img.resizeTiny {

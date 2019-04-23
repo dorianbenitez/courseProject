@@ -28,15 +28,12 @@ public class BookDaoImpl implements BookDao{
 		ps.setString(5, b.getLink());
 		
 		status = ps.executeUpdate();
-
-		 
 			
 	}catch(Exception e){
 		System.out.println(e);
 	}
 	return status;
 }
-	
 	
 	
 	public int delete(Book d) {

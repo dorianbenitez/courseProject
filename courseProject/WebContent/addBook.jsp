@@ -41,7 +41,7 @@
 			<nav class="navbar sticky-top navbar-light bg-dark">
 			<ul class="nav">
 				<li><a class="navbar-brand" href="adminWelcome.jsp">Home</a></li>
-				<li><a class="navbar-brand" href="table3.jsp"> Browse Books</a></li>
+				<li><a class="navbar-brand" href="table.jsp"> Browse Books</a></li>
 			</ul>
 		</nav>	  
 	
@@ -90,7 +90,7 @@
 	<tr align="left" valign="top">
 		<td> 
   			<input type="submit" name="submit" value="submit" /> 
-  			<input type="submit" name="submit" value="remove" /> 
+  			<%--  <input type="submit" name="submit" value="delete" />   --%>
   		</td>
   	</tr>
 	

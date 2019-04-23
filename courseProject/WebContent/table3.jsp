@@ -88,7 +88,8 @@ while (rs.next()){
 
 		<%-- string(1,2,3,4,5) = title, author, isbn, price, cover --%>
 		
-		<td style="padding:2px"><img class="resize" id="cover" src="<%=rs.getString(5)%>" /> 
+		<p style="text-align:center"><td style="padding:20px; text-align:center; width:17%; background-color:#F1EEE3;">
+			<img class="resize" id="cover" src="<%=rs.getString(5)%>" /> </p> 
 		
 		<style>
 			p{
@@ -106,7 +107,8 @@ while (rs.next()){
 		
 		%>
 		
-					<p name="title" id="title"><font size="4" color="blue"><%=t%></font></p>
+					<p name="title" id="title"><font size="4" color="blue"><%=t%></font></p> 
+      				
 					<p name="author" id="author"><%=rs.getString(2)%></p>
 					<p name="price" id="price">$<%=p%></p>
 					<form action="CheckoutController" method="post" >
@@ -114,10 +116,25 @@ while (rs.next()){
 						<p><input type="hidden" name="author" value="<%=a%>"></p>
 						<p><input type="hidden" name="ISBN" value="<%=i%>"></p>
 						<p><input type="hidden" name="price" value="<%=p%>"></p>
-						<p><input type="hidden" name="link" value="<%=c%>"></p>
-						<input class="btn-primary btn-sm" type="submit" name="Add to cart" value="Add to cart" /></td>
+						<p><input type="hidden" name="link" value="<%=c%>"></p><br>
+						
+						
+						<div id="bottomCell">
+							<input class="btn-primary btn-sm" type="submit" name="Add to cart" value="Add to cart" />
+						</div>
+						
 					</form>
-		</td>
+					
+					<form action = "singleBook.jsp" method = "GET">
+        				<p><input type="hidden" name="title" value="<%=t%>"></p>
+						<p><input type="hidden" name="author" value="<%=a%>"></p>
+						<p><input type="hidden" name="ISBN" value="<%=i%>"></p>
+						<p><input type="hidden" name="price" value="<%=p%>"></p>
+						<p><input type="hidden" name="link" value="<%=c%>"></p><br>
+         			<input class="btn-primary btn-sm" type="submit" value = "More Details..." />
+      				</form>
+					
+					</td>
 <% } %>
 
 	<% 

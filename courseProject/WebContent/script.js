@@ -22,6 +22,7 @@ function regValidate() {
         return false;
     }
 }
+
 function loginValidate(){
 	var username = document.forms["loginform"]["username"].value;
 	var password = document.forms["loginform"]["password"].value;
@@ -44,3 +45,6 @@ function loginValidate(){
         return false;
     }
 }
+
+
+

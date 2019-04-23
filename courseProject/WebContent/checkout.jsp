@@ -22,11 +22,23 @@
 
 <body>
 
+<% 
+double price = 0;
+%>
+
 <div style="background: url(https://www.heet.org.uk/wp-content/uploads/2016/06/gradient-background-26046-26731-hd-wallpapers.jpg.png) !important" class="jumbotron">
 	<div class="text-center">
 		<font size="5" color=#ebf1ed> <h1>Checkout</h1> </font>
 	</div>
 </div>
+
+		<%-- This creates a "sticky" navbar, which always displays on the page no matter what --%>
+		<nav class="navbar sticky-top navbar-light bg-dark">
+			<ul class="nav">
+				<li><a class="navbar-brand" href="welcome.jsp">Home</a></li>
+				<li><a class="navbar-brand" href="table.jsp"> Continue Shopping</a></li>
+			</ul>
+		</nav>	 <br>
 
 
 <%
@@ -78,18 +90,12 @@ int n=0;
 
 
 <%
-while (rs.next() && n<20){
-	n++;
-
-%>
-
-	<% 
-		if(n%6 ==0){
-	%>
+while (rs.next()){
+	price += Double.parseDouble(rs.getString(1));
 	
-		<tr></tr>
+	n++;
+	%>
 
-	<% } %>
 
 <%-- getString(1,2,3,4,5) = (price, title, link, author, ISBN) --%>
 <tbody>
@@ -110,7 +116,7 @@ while (rs.next() && n<20){
    </tbody>
 
 	<% 
-		} 
+}
 	%>
 
 <%
@@ -118,7 +124,7 @@ while (rs.next() && n<20){
 rs.close();
 statement.close();
 connection.close();
-} 
+}
 catch (Exception ex) {
 %>
 
@@ -135,7 +141,10 @@ out.println("Unable to connect to database.");
 
 <div style="width:100%; height:100%; text-align: center">
 
-<p>Total Price: </p>
+<% 
+if(price>0){ price = Math.round(price * 100.0) / 100.0; } %>
+
+<p>Total Price: $<%= price %></p>
 <a class="btn btn-primary" href="payment.jsp" role="button">Final Checkout</a>
 <br><br><br>
 

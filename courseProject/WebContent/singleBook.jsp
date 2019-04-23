@@ -3,6 +3,15 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.io.*" %> 
 
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+<link rel="stylesheet" href="css/bootstrap-grid.css" type="text/css">
+<link rel="stylesheet" href="css/bootstrap-grid.min.css" type="text/css">
+<link rel="stylesheet" href="css/bootstrap-reboot.css" type="text/css">
+<link rel="stylesheet" href="css/bootstrap-reboot.min.css" type="text/css">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="login.css" type="text/css">
+
+
 
 <html>
 <head>
@@ -10,10 +19,14 @@
 <title>Book</title>
 </head>
 <body>
-<h1>singleBook.jsp</h1>
 
-
-<form name="loginform" action="LoginController" method="post" onsubmit="return loginValidate()" > <br>
+<br><br>
+<p style="text-align:center"> <img class="resizeFinal" id="cover" src="<%=request.getParameter("link")%>" /> <br><br>
+<strong>Title:</strong> <%= request.getParameter("title")%><br>
+<strong>Author Name:</strong>  <%= request.getParameter("author")%><br>
+<strong>Price:</strong> $<%= request.getParameter("price")%><br>
+<strong>ISBN:</strong> <%= request.getParameter("ISBN")%><br>
+ </p>
 
 
 </body>

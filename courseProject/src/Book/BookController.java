@@ -22,7 +22,6 @@ public class BookController extends HttpServlet {
 			String title = request.getParameter("title");
 			String author = request.getParameter("author");
 			String isbn = request.getParameter("isbn");
-			//float price = request.getParameter("price");
 			String link = request.getParameter("link");
 			
 			String submitType = request.getParameter("submit");
@@ -34,10 +33,11 @@ public class BookController extends HttpServlet {
 					{
 					
 					}
-			else if(submitType.equals("remove")) {
-				d.delete(title);
+			else if(submitType.equals("delete")) {
+				f.delete(title);
 				request.getRequestDispatcher("checkout.jsp").forward(request, response);
 			}
+
 		
 		}
 	}

@@ -86,9 +86,9 @@ while (rs.next() && n<20){
 
 		<%-- string(1,2,3,4,5) = title, author, isbn, price, cover --%>
 		
-		<td style="padding:2px; text-align:center;">
-			<img class="resize" id="cover" src="<%=rs.getString(5)%>" /> 
-		
+<td style="padding:20px; text-align:center; width:17%; position: relative; border: solid 1px;">
+			<p style="text-align:center"> <img class="resize" id="cover" src="<%=rs.getString(5)%>" /> </p>
+			
 			<style>
 				p{
 					padding-top:0; 
