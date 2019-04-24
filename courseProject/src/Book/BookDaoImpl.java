@@ -73,6 +73,7 @@ public Book validateBook(String title, String author, String isbn, String price,
 	}
 	return b;
 }
+
 @Override
 public Book validateBook(String title, String author, String isbn, double price) {
 	// TODO Auto-generated method stub

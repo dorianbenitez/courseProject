@@ -30,17 +30,24 @@ public class addBook extends HttpServlet {
 		
 
 		String submitType = request.getParameter("submit");
-		Book b = new Book(title, author, isbn, price, link);
 		
-		bdao.register(b);
+		/*
 		
+		if(submitType.equals("submit") && b!=null && b.getTitle()!="" && b.getAuthor()!="" && b.getISBN()!="" && b.getLink()!="" && b.getPrice()!=""){ 
+			request.setAttribute("yesMessage", b.getTitle() +" by " + b.getAuthor()+ " (ISBN: "+b.getISBN() + ") has been added successfully!");
+			request.getRequestDispatcher("addBook.jsp").forward(request, response);		
+		}
+		*/
 		
-		if(submitType.equals("submit") && b!=null && b.getTitle()!=null && b.getAuthor()!=null && b.getISBN()!=null && b.getLink()!=null && b.getPrice()!=null){ 
+		if(submitType.equals("submit") && title!="" && author !="" && isbn!="" && link!="" && price!=""){ 
+			Book b = new Book(title, author, isbn, price, link);
+			
+			bdao.register(b);
 			request.setAttribute("yesMessage", b.getTitle() +" by " + b.getAuthor()+ " (ISBN: "+b.getISBN() + ") has been added successfully!");
 			request.getRequestDispatcher("addBook.jsp").forward(request, response);		
 		}
 		else{
-		request.setAttribute("noMessage", b.getISBN() + "Unsuccessful entry. Please try again (make sure to fill out all fields)");
+		request.setAttribute("noMessage", "Unsuccessful entry. Please try again (make sure to fill out all fields)");
 		request.getRequestDispatcher("addBook.jsp").forward(request, response);
 			}
 	}

@@ -34,7 +34,7 @@
 
 <body>
 	
-	<form name="addBookForm" action="addBook" method="post" onsubmit="return loginValidate()"><br>
+	<form name="addBookForm" action="addBook" method="post"><br>
 	
 			<nav class="navbar sticky-top navbar-light bg-dark">
 				<ul class="nav">
