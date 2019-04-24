@@ -31,7 +31,7 @@
 		<%-- <div class="nav-bar">  --%>
 		<nav class="navbar sticky-top navbar-light bg-dark">
 		<ul class="nav">
-			<li><a class="navbar-brand" onclick="history.go(-1)""><font color="white">Go Back</font></a></li>
+			<li><a id="goBack2" class="navbar-brand" onclick="history.go(-1)""><font color="white">Go Back</font></a></li>
 			<li><a class="navbar-brand" href ="register.jsp">Account Registration</a>
 		</ul>
 		</nav><br>

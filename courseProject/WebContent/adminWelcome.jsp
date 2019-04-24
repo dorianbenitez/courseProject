@@ -35,10 +35,10 @@
 
 		<nav class="navbar sticky-top navbar-light bg-dark">
 			<ul class="nav">
-				<li><a class="navbar-brand" href="browse.jsp">Browse Books</a></li>
+				<li><a id="browseBooks" class="navbar-brand" href="browse.jsp">Browse Books</a></li>
 				<li><a id="updateBook" class="navbar-brand" href="addBook.jsp"> Update Books</a></li>
 				<%--  <li><a class="navbar-brand" href="addAdmin.jsp"> Update Admins</a></li>  --%>
-				<li><a class="navbar-brand" href="logout.jsp"> Logout</a></li>
+				<li><a id="aLogout" class="navbar-brand" href="logout.jsp"> Logout</a></li>
 				
 			</ul>
 		</nav>	

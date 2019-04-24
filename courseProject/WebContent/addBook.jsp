@@ -38,7 +38,7 @@
 	
 			<nav class="navbar sticky-top navbar-light bg-dark">
 				<ul class="nav">
-					<li><a class="navbar-brand" href="adminWelcome.jsp">Home</a></li>
+					<li><a id="home" class="navbar-brand" href="adminWelcome.jsp">Home</a></li>
 					<li><a id="browseBooks" class="navbar-brand" href="browse.jsp"> Browse Books</a></li>
 				</ul>
 			</nav>	  

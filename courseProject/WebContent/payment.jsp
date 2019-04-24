@@ -50,10 +50,10 @@
  	 	<tr align="left" valign="top">
  	 		<th>Payment method: </th>
  	 			<td><select>
-  					<option value="volvo">Visa</option>
-  					<option value="saab">Mastercard</option>
-  					<option value="mercedes">Discover</option>
-  					<option value="audi">American Express</option>
+  					<option id="visa" value="visa">Visa</option>
+  					<option id="mastercard" value="mastercard">Mastercard</option>
+  					<option id="discover" value="discover">Discover</option>
+  					<option id="amex" value="amex">American Express</option>
 				</select></td>
 		</tr>
 <br><br>
@@ -145,7 +145,7 @@
 	<option value="SC">South Carolina</option>
 	<option value="SD">South Dakota</option>
 	<option value="TN">Tennessee</option>
-	<option value="TX">Texas</option>
+	<option id="texas" value="TX">Texas</option>
 	<option value="UT">Utah</option>
 	<option value="VT">Vermont</option>
 	<option value="VA">Virginia</option>
