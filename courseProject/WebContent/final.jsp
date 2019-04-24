@@ -23,7 +23,7 @@
 <p style="text-align: center;"><strong><font size="5" color="green">Payment successful! Thank you for your order!</font></strong><br><br><br>
 
   		<tr align="center" valign="top">
-			<font size="3"><td><a href="welcome.jsp">Click here to return to home..</a></td></font>  
+			<font size="3"><td><a id="goHome" href="welcome.jsp">Click here to return to home..</a></td></font>  
  		</tr>
 </p>
 

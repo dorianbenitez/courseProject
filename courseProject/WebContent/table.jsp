@@ -31,7 +31,7 @@
 <nav class="navbar sticky-top navbar-light bg-dark">
 		<ul class="nav">
 			<a class="navbar-brand" href="welcome.jsp">Home</a>
-			<a class="navbar-brand" href="checkout.jsp">Checkout</a>
+			<a id="checkout" class="navbar-brand" href="checkout.jsp">Checkout</a>
 			<a class="navbar-brand" href ="logout.jsp">Logout</a>
 		</ul>
 </nav><br>
@@ -110,7 +110,7 @@ while (rs.next() && n<20){
 						
 						
 						<div id="bottomCell">
-							<input class="btn-primary btn-sm" type="submit" name="Add to cart" value="Add to cart" />
+							<input id="addToCart" class="btn-primary btn-sm" type="submit" name="Add to cart" value="Add to cart" />
 						</div>
 						
 					</form>

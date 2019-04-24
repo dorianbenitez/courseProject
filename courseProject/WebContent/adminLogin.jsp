@@ -45,17 +45,17 @@
 		
 			<tr align="left" valign="top"><br>	
 				<td>Username:</td>
-  				<td><input type="text" name ="user" id="user"/></td>
+  				<td><input id="adminUser" type="text" name ="user" id="user"/></td>
 	 		</tr>
 	 
 	 		<tr align="left" valign="top">
 	   			<td>Password:</td>
- 		 		<td><input type="password" name ="pass" id="pass"/></td>
+ 		 		<td><input id="adminPass" type="password" name ="pass" id="pass"/></td>
  	 		</tr>
  	 
  		 	<tr align="left" valign="top">
 				<td> 
-  					<input type="submit" name="submit" value="login" /> 
+  					<input id="adminLogin" type="submit" name="submit" value="login" /> 
   				</td>
   			</tr>
 	

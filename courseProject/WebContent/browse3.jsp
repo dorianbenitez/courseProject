@@ -136,7 +136,7 @@ $(document).ready(function(){
 						<p><input type="hidden" name="ISBN" value="<%=i%>"></p>
 						<p><input type="hidden" name="price" value="<%=p%>"></p>
 						<p><input type="hidden" name="link" value="<%=c%>"></p><br>
-         			<input class="btn-primary btn-sm" type="submit" value = "More Details..." />
+         			<input id="detail" class="btn-primary btn-sm" type="submit" value = "More Details..." />
       				</form>
 					
 					

@@ -107,9 +107,9 @@ while (rs.next()){
       <td><p>$<%=rs.getString(1)%></p></td>
       
       	<form action="CheckoutController" method="post" >
-      		<td style="text-align:center">
+      		<td style="text-align:center" >
 					<p><input type="hidden" name="title" value="<%=rs.getString(2)%>"></p>
-					<input class="btn btn-danger" type="submit" name="Add to cart" value="remove" /></td>
+					<input id="remove" class="btn btn-danger" type="submit" name="Add to cart" value="remove" /></td>
 			</td>
 		</form>
     </tr>
@@ -145,7 +145,7 @@ out.println("Unable to connect to database.");
 if(price>0){ price = Math.round(price * 100.0) / 100.0; } %>
 
 <p>Total Price: $<%= price %></p>
-<a class="btn btn-primary" href="payment.jsp" role="button">Final Checkout</a>
+<a id="finalCheckout" class="btn btn-primary" href="payment.jsp" role="button">Final Checkout</a>
 <br><br><br>
 
 </div>

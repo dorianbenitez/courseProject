@@ -62,22 +62,22 @@
 	 
 	 		<tr align="left" valign="top">
 	   			<td>Name On Card: </td>
- 		 		<td><input type="text" name ="lastName"/></td>
+ 		 		<td><input id="nameOnCard" type="text" name ="lastName"/></td>
  	 		</tr>
  	 
  	  		<tr align="left" valign="top">
 	   			<td>Card Number:</td>
- 				 <td><input type="text" name ="username"/></td>
+ 				 <td><input id="cardNo" type="text" name ="username"/></td>
  			</tr>
  	 
  	  		<tr align="left" valign="top">
 	   			<td>Expiration Date:</td>
- 		 		<td><input type="text" name ="password" id="password"/></td>
+ 		 		<td><input id="cardExpDate" type="text" name ="password" id="password"/></td>
  	 		</tr>
  	 
  	  		<tr align="left" valign="top">
 	   			<td>CVV: </td>
-	   			<td><input type="password" name ="password" id="password"/></td>
+	   			<td><input id="cvv" type="password" name ="password" id="password"/></td>
  	 		</tr>
  	 
  	 		<tr align="left" valign="top">
@@ -86,17 +86,17 @@
  	 
  	   		<tr align="left" valign="top">
 	   			<td>E-mail: </td>
-	   			<td><input type="text" name ="password" id="password"/></td>
+	   			<td><input id="email" type="text" name ="password" id="password"/></td>
  	 		</tr>
  	 
  	  	   <tr align="left" valign="top">
 	   			<td>Phone Number: </td>
-	   			<td><input type="text" name ="password" id="password"/></td>
+	   			<td><input id="phone" type="text" name ="password" id="password"/></td>
  	 		</tr>
  	 
  	  	   <tr align="left" valign="top">
 	   <td>City:</td>
-	   	<td><input type="text" name ="password" id="password"/></td>
+	   	<td><input id="city" type="text" name ="password" id="password"/></td>
  	 </tr>
  	 
  	  	   <tr align="left" valign="top">
@@ -158,14 +158,14 @@
  	 
  	  	   <tr align="left" valign="top">
 	   <td>Zip Code:</td>
-	   	<td><input type="text" name ="password" id="password"/></td>
+	   	<td><input id="zip" type="text" name ="password" id="password"/></td>
  	 </tr>
 
 
 	<tr align="left" valign="top">
 		<form action="CheckoutController" method="post" >
       		<td style="text-align:center">
-					<input class="btn-primary" type="submit" name="Add to cart" value="Submit" /></td>
+					<input id="submitPayment" class="btn-primary" type="submit" name="Add to cart" value="Submit" /></td>
 			</td>
 		</form>
   	</tr>

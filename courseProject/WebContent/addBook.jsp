@@ -39,7 +39,7 @@
 			<nav class="navbar sticky-top navbar-light bg-dark">
 				<ul class="nav">
 					<li><a class="navbar-brand" href="adminWelcome.jsp">Home</a></li>
-					<li><a class="navbar-brand" href="table.jsp"> Browse Books</a></li>
+					<li><a id="browseBooks" class="navbar-brand" href="browse.jsp"> Browse Books</a></li>
 				</ul>
 			</nav>	  
 	
@@ -59,34 +59,34 @@
 	<table border = "0">
  		<tr align="left" valign="top">
  	 		<td>Book Title:</td>
-  			<td><input type="text" name="title" /></td>
+  			<td><input id="title" type="text" name="title" /></td>
 	 	</tr>
 	 
 	 
 	 	<tr align="left" valign="top">
 	   		<td>Author Name:</td>
- 		 	<td><input type="text" name ="author"/></td>
+ 		 	<td><input id="author" type="text" name ="author"/></td>
  	 	</tr>
  	 
  	 	<tr align="left" valign="top">
 	   		<td>ISBN:</td>
- 		 	<td><input type="text" name ="ISBN"/></td>
+ 		 	<td><input id="isbn" type="text" name ="ISBN"/></td>
  	 	</tr>
  	 
  	 	<tr align="left" valign="top">
 	   		<td>Price (Ex. 6.99):</td>
- 		 	<td><input type="text" name ="price"/></td>
+ 		 	<td><input id="price" type="text" name ="price"/></td>
  	 	</tr>
 	 
 	  	 <tr align="left" valign="top">
 	   		<td>Link:</td>
- 		 	<td><input type="text" name ="link"/></td>
+ 		 	<td><input id="link" type="text" name ="link"/></td>
  	 	</tr>
 
 	
 		<tr align="left" valign="top">
 			<td> 
-  			<input type="submit" name="submit" value="submit" /> 
+  			<input id="addBook" type="submit" name="submit" value="submit" /> 
   			<%--  <input type="submit" name="submit" value="delete" />   --%>
   			</td>
   		</tr>

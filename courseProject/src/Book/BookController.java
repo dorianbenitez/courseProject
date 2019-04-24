@@ -33,10 +33,6 @@ public class BookController extends HttpServlet {
 					{
 					
 					}
-			else if(submitType.equals("delete")) {
-				f.delete(title);
-				request.getRequestDispatcher("checkout.jsp").forward(request, response);
-			}
 
 		
 		}

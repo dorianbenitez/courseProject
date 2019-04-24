@@ -47,35 +47,35 @@
 	
  	 <tr align="left" valign="top">
  	 	<td>First name: </td>
-  			<td><input type="text" name ="name"/></td>
+  			<td><input id="first" type="text" name ="name"/></td>
 	 </tr>
 	 
 	 
 	 <tr align="left" valign="top">
 	   <td>Last name:</td>
- 		 <td><input type="text" name ="lastName"/></td>
+ 		 <td><input id="last" type="text" name ="lastName"/></td>
  	 </tr>
  	 
  	  <tr align="left" valign="top">
 	   <td>Username</td>
- 		 <td><input type="text" name ="username"/></td>
+ 		 <td><input id="user" type="text" name ="username"/></td>
  	 </tr>
  	 <div id="username_error"></div>
  	 
  	  <tr align="left" valign="top">
 	   <td>Password</td>
- 		 <td><input type="password" name ="password" id="password"/></td>
+ 		 <td><input id="pass1" type="password" name ="password" id="password"/></td>
  	 </tr>
  	 
  	  <tr align="left" valign="top">
 	   <td>Re-Type Password: </td>
- 		 <td><input type="password" name ="retry-password" id="retry-password"/></td>
+ 		 <td><input id="pass2" type="password" name ="retry-password" id="retry-password"/></td>
  	 </tr>
 
 	<div id="password_error"></div><br>
 	<tr align="left" valign="top">
 		<td> 
-  			<input type="submit" name="submit" value="register" /> 
+  			<input id="register" type="submit" name="submit" value="register" /> 
   			<input type="reset" name="reset">
   		</td>
   	</tr>

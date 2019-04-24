@@ -28,7 +28,7 @@
 <strong>ISBN:</strong> <%= request.getParameter("ISBN")%><br>
  </p>
  
- 	<br><br><p style="text-align:center;"><a class="btn btn-primary" onclick="history.go(-1)" role="button">Go Back</a></p>
+ 	<br><br><p style="text-align:center;"><a id="goBack" class="btn btn-primary" onclick="history.go(-1)" role="button">Go Back</a></p>
 
 
 </body>

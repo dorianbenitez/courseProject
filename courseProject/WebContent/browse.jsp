@@ -173,7 +173,7 @@ out.println("Unable to connect to database.");
     </li>
     <li class="page-item disabled"><a class="page-link" href="browse.jsp">1</a></li>
     <li class="page-item"><a class="page-link" href="browse2.jsp">2</a></li>
-    <li class="page-item"><a class="page-link" href="browse3.jsp">3</a></li>
+    <li class="page-item"><a id="page3" class="page-link" href="browse3.jsp">3</a></li>
     <li class="page-item">
       <a class="page-link" href="browse2.jsp">Next</a>
     </li>

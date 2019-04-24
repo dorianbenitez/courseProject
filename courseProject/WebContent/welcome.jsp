@@ -105,9 +105,9 @@ img {vertical-align: middle;}
 
 		<nav class="navbar sticky-top navbar-light bg-dark">
 			<ul class="nav">
-				<li><a class="navbar-brand" href="table.jsp">Shop Books</a></li>
+				<li id="shop"><a class="navbar-brand" href="table.jsp">Shop Books</a></li>
 								<li><a class="navbar-brand" href="checkout.jsp">Checkout</a></li>
-				<li><a class="navbar-brand" href="logout.jsp"> Logout</a></li>
+				<li><a id="cLogout" class="navbar-brand" href="logout.jsp"> Logout</a></li>
 			</ul>
 		</nav>	<br>
 	
