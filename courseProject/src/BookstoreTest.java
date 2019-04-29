@@ -14,21 +14,55 @@ WebDriver driver;
 
 @Before
 public void openBookstoreLoginPage() throws InterruptedException{
-System.setProperty("webdriver.chrome.driver","chromedriver");
-driver = new ChromeDriver();
-driver.get("http://localhost:8080/courseProject/login.jsp");
-Assert.assertEquals("Login Page", driver.getTitle());
+	System.setProperty("webdriver.chrome.driver","chromedriver");
+	driver = new ChromeDriver();
+	driver.get("http://localhost:8080/courseProject/login.jsp");
+	Assert.assertEquals("Login Page", driver.getTitle());
+	driver.manage().window().maximize();
 }
 
 
 @Test
-public void testRegisterCustomer() throws InterruptedException{
-	
+public void testRegisterCustomerFail() throws InterruptedException{
+	// Customer clicks on Account Registration
 	Thread.sleep(2000);
 	WebElement accountRegister = driver.findElement(By.id("accountRegister"));
 	accountRegister.click();
 	Thread.sleep(3000);
 	
+	// Customer enters information for all required fields except 'username' 
+	WebElement firstName = driver.findElement(By.id("first"));
+	firstName.sendKeys("Group");
+	Thread.sleep(300);
+
+	WebElement lastName = driver.findElement(By.id("last"));
+	lastName.sendKeys("9");
+	Thread.sleep(300);
+
+	WebElement password = driver.findElement(By.id("pass1"));
+	password.sendKeys("group9");
+	Thread.sleep(300);
+
+	WebElement retype = driver.findElement(By.id("pass2"));
+	retype.sendKeys("group9");
+	Thread.sleep(3000);
+
+	WebElement register = driver.findElement(By.id("register"));
+	register.click();
+	Thread.sleep(4000);
+	// Customer is not allowed to register
+}
+
+
+@Test
+public void testRegisterCustomerSuccess() throws InterruptedException{
+	// Customer clicks on account registration
+	Thread.sleep(2000);
+	WebElement accountRegister = driver.findElement(By.id("accountRegister"));
+	accountRegister.click();
+	Thread.sleep(3000);
+	
+	// Customer enters information for all required fields 
 	WebElement firstName = driver.findElement(By.id("first"));
 	firstName.sendKeys("Group");
 	Thread.sleep(300);
@@ -52,10 +86,13 @@ public void testRegisterCustomer() throws InterruptedException{
 	WebElement register = driver.findElement(By.id("register"));
 	register.click();
 	Thread.sleep(3000);
+	// Customer registers successfully 
 }
+
 
 @Test
 public void testLoginFail() throws InterruptedException{
+	// Customer enters invalid username and password combination
 	Thread.sleep(1000);
 	WebElement userBox = driver.findElement(By.id("username"));
 	userBox.sendKeys("sign in fail");
@@ -67,11 +104,13 @@ public void testLoginFail() throws InterruptedException{
 	WebElement link = driver.findElement(By.id("send"));
 	link.click();
 	Thread.sleep(3000);
+	// Customer is re-directed to the account registration page
 }
 
 
 @Test
 public void testLoginSuccess() throws InterruptedException{
+	// Customer enters valid username and password combination
 	Thread.sleep(1000);
 	WebElement user = driver.findElement(By.id("username"));
 	user.sendKeys("group9");
@@ -83,62 +122,65 @@ public void testLoginSuccess() throws InterruptedException{
 	WebElement send = driver.findElement(By.id("send"));
 	send.click();
 	Thread.sleep(3000);
+	// Customer is redirected to the welcome page
 }
 
 
 @Test
 public void testCustomerCheckout() throws InterruptedException{
-	Thread.sleep(1000);
 	
+	// Customer logs in using valid username and password combination
+	Thread.sleep(1000);
 	WebElement user = driver.findElement(By.id("username"));
 	user.sendKeys("group9");
 	Thread.sleep(500);
 
 	WebElement pass = driver.findElement(By.id("password"));
 	pass.sendKeys("group9");
-	Thread.sleep(3000);
+	Thread.sleep(2000);
+	
 	WebElement send = driver.findElement(By.id("send"));
 	send.click();
 	Thread.sleep(3000);
+	// Customer is re-directed to the welcome page
 	
+	// Customer selects to shop books
 	WebElement shop = driver.findElement(By.id("shop"));
 	shop.click();
-
-	Thread.sleep(2000);
-
+	Thread.sleep(1500);
+	
+	// Scrolls to the bottom of the page
 	((JavascriptExecutor) driver)
 	.executeScript("window.scrollTo(0, 600)");
-	Thread.sleep(2000);
+	Thread.sleep(1000);
 
+	// Customer adds book to their checkout cart
 	List<WebElement> addToCart = driver.findElements(By.id("addToCart"));
 	WebElement add = addToCart.get(5);
 	add.click();
 	Thread.sleep(1000);
 
-
 	((JavascriptExecutor) driver)
 	.executeScript("window.scrollTo(0, 600)");
-	Thread.sleep(2000);
-
+	Thread.sleep(1000);
 
 	List<WebElement> addToCart2 = driver.findElements(By.id("addToCart"));
 	WebElement add2 = addToCart2.get(6);
 	add2.click();
-	Thread.sleep(2000);
+	Thread.sleep(1000);
 
 	((JavascriptExecutor) driver)
 	.executeScript("window.scrollTo(0, 1100)");
-	Thread.sleep(2000);
-
+	Thread.sleep(1000);
 
 	List<WebElement> addToCart3 = driver.findElements(By.id("addToCart"));
 	WebElement add3 = addToCart3.get(10);
 	add3.click();
 
-	Thread.sleep(3000);
+	Thread.sleep(1500);
 	WebElement checkout = driver.findElement(By.id("checkout"));
 	checkout.click();
-	// End of shop books
+	// End of shop books, customer selects to checkout 
 	
 
 	// Remove books from cart
@@ -153,27 +195,22 @@ public void testCustomerCheckout() throws InterruptedException{
 	remove.click();
 	Thread.sleep(2000);
 	// end of remove book from cart
-
-
+	
 
 	// Final checkout click
 	((JavascriptExecutor) driver)
 	.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
-
-	Thread.sleep(3000);
+	Thread.sleep(2000);
 	WebElement finalCheckout = driver.findElement(By.id("finalCheckout"));
 	finalCheckout.click();
 	
 	
 	//payment info
-
 	Thread.sleep(1000);
 	((JavascriptExecutor) driver)
 	.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 	Thread.sleep(2000);
-
-
 
 	WebElement cardType = driver.findElement(By.id("mastercard"));
 	cardType.click();
@@ -218,6 +255,7 @@ public void testCustomerCheckout() throws InterruptedException{
 
 	WebElement submitPayment = driver.findElement(By.id("submitPayment"));
 	submitPayment.click();
+	Thread.sleep(3000);
 
 	// End of payment info
 }
@@ -225,7 +263,7 @@ public void testCustomerCheckout() throws InterruptedException{
 
 @Test
 public void testAdminLoginFail() throws InterruptedException{
-	Thread.sleep(3500);
+	Thread.sleep(2500);
 	WebElement adminPortal = driver.findElement(By.id("adminPortal"));
 	adminPortal.click();
 
@@ -241,16 +279,17 @@ public void testAdminLoginFail() throws InterruptedException{
 
 	WebElement adminLogin = driver.findElement(By.id("adminLogin"));
 	adminLogin.click();
+	Thread.sleep(2000);
 }
 
 
 @Test
-public void adminLoginSuccess() throws InterruptedException{
-	Thread.sleep(3500);
+public void testAdminLoginSuccess() throws InterruptedException{
+	Thread.sleep(2500);
 	WebElement adminPortal = driver.findElement(By.id("adminPortal"));
 	adminPortal.click();
 
-	Thread.sleep(2000);
+	Thread.sleep(1500);
 
 	WebElement adminUser = driver.findElement(By.id("adminUser"));
 	adminUser.sendKeys("dorian");
@@ -262,12 +301,13 @@ public void adminLoginSuccess() throws InterruptedException{
 
 	WebElement adminLogin = driver.findElement(By.id("adminLogin"));
 	adminLogin.click();
+	Thread.sleep(2000);
 }
 
 
 @Test
 public void testAdminAddBookFail() throws InterruptedException{
-	Thread.sleep(3500);
+	Thread.sleep(2500);
 	WebElement adminPortal = driver.findElement(By.id("adminPortal"));
 	adminPortal.click();
 
@@ -279,13 +319,11 @@ public void testAdminAddBookFail() throws InterruptedException{
 
 	WebElement adminPass = driver.findElement(By.id("adminPass"));
 	adminPass.sendKeys("dorian");
-	Thread.sleep(2000);
+	Thread.sleep(1500);
 
 	WebElement adminLogin = driver.findElement(By.id("adminLogin"));
 	adminLogin.click();
-	
 	Thread.sleep(2000);
-
 
 
 	WebElement browse = driver.findElement(By.id("browseBooks"));
@@ -298,28 +336,25 @@ public void testAdminAddBookFail() throws InterruptedException{
 	Thread.sleep(1000);
 
 
-
 	WebElement page33 = driver.findElement(By.id("page3"));
 	page33.click();
-	Thread.sleep(2000);
+	Thread.sleep(1500);
 
 	((JavascriptExecutor) driver)
 	.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-	Thread.sleep(3000);
+	Thread.sleep(2000);
 
 
 	WebElement Back = driver.findElement(By.id("goBack2"));
 	Back.click();
-	Thread.sleep(1500);
+	Thread.sleep(1000);
 
 	WebElement Back2 = driver.findElement(By.id("goBack3"));
 	Back2.click();
-	Thread.sleep(1500);
+	Thread.sleep(2000);
 	
 	
 	//admin add book
-
-	Thread.sleep(2000);
 	WebElement updateBook = driver.findElement(By.id("updateBook"));
 	updateBook.click();
 	Thread.sleep(1000);
@@ -328,11 +363,6 @@ public void testAdminAddBookFail() throws InterruptedException{
 	((JavascriptExecutor) driver)
 	.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 	Thread.sleep(1500);
-
-
-	//WebElement title = driver.findElement(By.id("title"));
-	//title.sendKeys("The Catcher in the Rye");
-	//Thread.sleep(600);
 
 
 	WebElement author = driver.findElement(By.id("author"));
@@ -383,7 +413,7 @@ public void testAdminAddBookFail() throws InterruptedException{
 
 @Test
 public void testAdminAddBookSuccess() throws InterruptedException{
-	Thread.sleep(3500);
+	Thread.sleep(2500);
 	WebElement adminPortal = driver.findElement(By.id("adminPortal"));
 	adminPortal.click();
 
@@ -395,12 +425,12 @@ public void testAdminAddBookSuccess() throws InterruptedException{
 
 	WebElement adminPass = driver.findElement(By.id("adminPass"));
 	adminPass.sendKeys("dorian");
-	Thread.sleep(2000);
+	Thread.sleep(1500);
 
 	WebElement adminLogin = driver.findElement(By.id("adminLogin"));
 	adminLogin.click();
 	
-	Thread.sleep(2000);
+	Thread.sleep(1500);
 
 
 
@@ -417,7 +447,7 @@ public void testAdminAddBookSuccess() throws InterruptedException{
 
 	WebElement page33 = driver.findElement(By.id("page3"));
 	page33.click();
-	Thread.sleep(2000);
+	Thread.sleep(1500);
 
 	((JavascriptExecutor) driver)
 	.executeScript("window.scrollTo(0, document.body.scrollHeight)");
@@ -426,16 +456,14 @@ public void testAdminAddBookSuccess() throws InterruptedException{
 
 	WebElement Back = driver.findElement(By.id("goBack2"));
 	Back.click();
-	Thread.sleep(1500);
+	Thread.sleep(1000);
 
 	WebElement Back2 = driver.findElement(By.id("goBack3"));
 	Back2.click();
-	Thread.sleep(1500);
+	Thread.sleep(2000);
 	
 	
 	//admin add book
-
-	Thread.sleep(2000);
 	WebElement updateBook = driver.findElement(By.id("updateBook"));
 	updateBook.click();
 	Thread.sleep(1000);
@@ -443,7 +471,7 @@ public void testAdminAddBookSuccess() throws InterruptedException{
 
 	((JavascriptExecutor) driver)
 	.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-	Thread.sleep(1500);
+	Thread.sleep(1000);
 
 
 	WebElement title = driver.findElement(By.id("title"));
@@ -479,7 +507,7 @@ public void testAdminAddBookSuccess() throws InterruptedException{
 
 	WebElement browseBooks = driver.findElement(By.id("browseBooks"));
 	browseBooks.click();
-	Thread.sleep(1500);
+	Thread.sleep(1000);
 
 
 	((JavascriptExecutor) driver)
@@ -490,7 +518,7 @@ public void testAdminAddBookSuccess() throws InterruptedException{
 
 	WebElement page3 = driver.findElement(By.id("page3"));
 	page3.click();
-	Thread.sleep(2000);
+	Thread.sleep(1000);
 
 	((JavascriptExecutor) driver)
 	.executeScript("window.scrollTo(0, document.body.scrollHeight)");
@@ -504,11 +532,14 @@ public void testAdminAddBookSuccess() throws InterruptedException{
 	
 	WebElement goBack = driver.findElement(By.id("goBack"));
 	goBack.click();
+	Thread.sleep(3000);
 	
 }
 
-
-
+@After
+public void closePage(){
+driver.close();
+}
 
 
 

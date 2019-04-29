@@ -31,14 +31,6 @@ public class addBook extends HttpServlet {
 
 		String submitType = request.getParameter("submit");
 		
-		/*
-		
-		if(submitType.equals("submit") && b!=null && b.getTitle()!="" && b.getAuthor()!="" && b.getISBN()!="" && b.getLink()!="" && b.getPrice()!=""){ 
-			request.setAttribute("yesMessage", b.getTitle() +" by " + b.getAuthor()+ " (ISBN: "+b.getISBN() + ") has been added successfully!");
-			request.getRequestDispatcher("addBook.jsp").forward(request, response);		
-		}
-		*/
-		
 		if(submitType.equals("submit") && title!="" && author !="" && isbn!="" && link!="" && price!=""){ 
 			Book b = new Book(title, author, isbn, price, link);
 			

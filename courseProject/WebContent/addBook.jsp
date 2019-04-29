@@ -52,7 +52,7 @@
 	
 	
 	<div id="content">
-			<br> <font size="3">Please enter the information for the book you would like to add or remove..</font> <br><br>
+			<br> <font size="3">Please enter the information for the book you would like to add..</font> <br><br>
 	</div>
 	
 	

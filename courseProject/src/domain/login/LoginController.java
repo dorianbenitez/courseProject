@@ -37,14 +37,14 @@ public class LoginController extends HttpServlet {
 		if(submitType.equals("login") && c!=null && c.getName()!=null){
 			request.setAttribute("message", "Hello "+c.getName() + ",");
 			request.getRequestDispatcher("welcome.jsp").forward(request, response);
-		}else if(submitType.equals("register")){
+		}else if(submitType.equals("register") && username != "" && password != ""){
 			c.setName(request.getParameter("name"));
 			c.setUsername(request.getParameter("username"));
 			c.setPassword(request.getParameter("password"));
 			customerDao.register(c);
 			request.setAttribute("successMessage", "Registration done, please login!");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
-		}		
+		}	
 		else{
 			request.setAttribute("message", "Data Not Found! Please register!");
 			request.getRequestDispatcher("register.jsp").forward(request, response);
